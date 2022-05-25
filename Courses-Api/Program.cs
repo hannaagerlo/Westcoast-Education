@@ -1,11 +1,18 @@
 using Courses_Api.Data;
+using Courses_Api.Interface;
+using Courses_Api.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Databas kopplingen
 builder.Services.AddDbContext<CourseContext>(options => 
 options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
+
+// Dependacy injection för interface och klasser 
+builder.Services.AddScoped<ICoursesRepository, CourseRepository>(); 
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

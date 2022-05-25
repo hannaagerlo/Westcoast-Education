@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Courses_Api.Data;
+using Courses_Api.Interface;
 using Courses_Api.Models;
 using Courses_Api.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -15,8 +12,11 @@ namespace Courses_Api.Controllers
     public class CourseController : ControllerBase
     {
         private readonly CourseContext _context;
-        public CourseController(CourseContext context)
+        private readonly ICoursesRepository _courseRepo;
+      
+        public CourseController(CourseContext context, ICoursesRepository courseRepo)
         {
+            _courseRepo = courseRepo;
             _context = context;
         }
 
@@ -24,7 +24,7 @@ namespace Courses_Api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<CourseViewModel>>> ListCourses()
         {
-            var response = await _context.Courses.ToListAsync(); 
+            var response = await _courseRepo.ListAllCoursesAsync();
             var courseList = new List<CourseViewModel>();
 
             foreach(var course in response)
@@ -42,6 +42,18 @@ namespace Courses_Api.Controllers
                 );
             }
             return Ok(courseList);
+        }
+
+        // GET Category
+        [HttpGet("{category}")]
+        public async Task<ActionResult<Course>> GetCourseByCategory(string category)
+        {
+            var response = await _context.Courses.FindAsync(category);
+            
+            if(response is null)
+            return NotFound($"Det gick inte att hitta några kurser med kategorin: {category}");
+
+            return Ok(200);
         }
         //POST
         [HttpPost]
