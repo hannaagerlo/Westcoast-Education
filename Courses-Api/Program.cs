@@ -1,4 +1,5 @@
 using Courses_Api.Data;
+using Courses_Api.Helpers;
 using Courses_Api.Interface;
 using Courses_Api.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,9 @@ options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
 // Dependacy injection för interface och klasser 
 builder.Services.AddScoped<ICoursesRepository, CourseRepository>(); 
+
+// Add Automapper
+builder.Services.AddAutoMapper(typeof(AutoMappersProfiles).Assembly);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
