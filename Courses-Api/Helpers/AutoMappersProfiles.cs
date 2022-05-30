@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Courses_Api.Models;
 using Courses_Api.ViewModel;
+using Courses_Api.ViewModel.Student;
 
 namespace Courses_Api.Helpers
 {
@@ -16,7 +17,9 @@ namespace Courses_Api.Helpers
             CreateMap<Course, CourseViewModel>()
             .ForMember(dest => dest.CourseId, options => options.MapFrom(src => src.Id));
             
-
+            CreateMap<PostStudentViewModel, Student>();
+            CreateMap<Student, StudentViewModel>()
+            .ForMember(dest => dest.StudentId, options => options.MapFrom(src => src.Id));
         }
     }
 }

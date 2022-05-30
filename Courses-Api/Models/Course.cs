@@ -15,5 +15,8 @@ namespace Courses_Api.Models
         public string? Description { get; set; }
         public string? Details { get; set; }
 
+        public ICollection<Student> Students { get; set; } = new List<Student>();
+        public Teacher Teachers { get; set; } = new Teacher();
+
     }
 }

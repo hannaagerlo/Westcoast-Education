@@ -8,11 +8,11 @@ namespace Courses_Api.Interface
 {
     public interface IStudentRepository
     {
-         public Task<List<StudentViewModel>> ListAllCoursesAsync();
-        public Task<StudentViewModel?> GetCourseAsync(string category);
-        public Task AddCourseAsync(PostStudentViewModel course);
-        public Task UpdateCourseAsync(int id, PostStudentViewModel course);
-        public Task DeleteCourseAsync(int id);
+         public Task<List<StudentViewModel>> ListAllStudentsAsync();
+        public Task<StudentViewModel?> GetStudentAsync(int id);
+        public Task AddStudentAsync(PostStudentViewModel student);
+        public Task UpdateStudentAsync(int id, PostStudentViewModel student);
+        public Task DeleteStudentAsync(int id);
         public Task<bool> SaveAllAsync();
     }
 }

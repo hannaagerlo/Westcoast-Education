@@ -2,6 +2,7 @@
 using Courses_Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Courses_Api.Data.Migrations
 {
     [DbContext(typeof(CourseContext))]
-    partial class CourseContextModelSnapshot : ModelSnapshot
+    [Migration("20220530174735_init2")]
+    partial class init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");

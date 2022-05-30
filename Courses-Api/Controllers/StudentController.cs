@@ -19,35 +19,35 @@ namespace Courses_Api.Controllers
         }
 
          [HttpGet]
-        public async Task<ActionResult<List<StudentViewModel>>> ListCourses()
+        public async Task<ActionResult<List<StudentViewModel>>> ListStudent()
         {
-             return Ok(await _studentRepo.ListAllCoursesAsync());
-
-        
+             return Ok(await _studentRepo.ListAllStudentsAsync());        
         }
 
-        // GET Category
-        [HttpGet("/bycategory{category}")]
-        public async Task<ActionResult<StudentViewModel>> GetCourseByCategory(string category)
+        // Sök/lista student efter Id nummer. 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<StudentViewModel>>> GetStudentById(int id)
         {
-            var response = await _courseRepo.GetCourseAsync(category);
+            var response = await _studentRepo.GetStudentAsync(id);
             
             if(response is null)
-            return NotFound($"Det gick inte att hitta några kurser med kategorin: {category}");
+            return NotFound($"Det gick inte att hitta några kurser med kategorin: {id}");
 
             return Ok(response);
-        }
+        }      
+        
+    
         //POST
         [HttpPost]
-        public async Task<ActionResult> AddCourse(PostCoursesViewModel course)
+        public async Task<ActionResult> AddStudent(PostStudentViewModel student)
         {
             // måste lägga in felhantering, ska inte gå att spara en kurs med samma kursnummer.
-                await _courseRepo.AddCourseAsync(course);
-                if (await _courseRepo.SaveAllAsync())
+                await _studentRepo.AddStudentAsync(student);
+                if (await _studentRepo.SaveAllAsync())
                 {
                     return StatusCode(201);
                 }
-                return StatusCode(500, "Det gick inte att spara kursen");
+                return StatusCode(500, "Det gick inte att spara den nya användaren");
 
 
                 
@@ -69,27 +69,27 @@ namespace Courses_Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCourseAsync(int id, PostCoursesViewModel course)
+        public async Task<ActionResult> UpdateCourseAsync(int id, PostStudentViewModel course)
         {
-            await _courseRepo.UpdateCourseAsync(id, course);
-            if(await _courseRepo.SaveAllAsync())
+            await _studentRepo.UpdateStudentAsync(id, course);
+            if(await _studentRepo.SaveAllAsync())
             {
-                return StatusCode(204, "Kursen är uppdaterad");
+                return StatusCode(204, "Användaren är uppdaterad");
             }
-            return StatusCode(500, "Ett fel inträffade när kursen skulle uppdateras");
+            return StatusCode(500, "Ett fel inträffade när användaren skulle uppdateras");
 
 
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteCourseAsync(int id)
+        public async Task<ActionResult> DeleteStudentAsync(int id)
         {
-            await _courseRepo.DeleteCourseAsync(id);
-            if(await _courseRepo.SaveAllAsync())
+            await _studentRepo.DeleteStudentAsync(id);
+            if(await _studentRepo.SaveAllAsync())
             {
-                return StatusCode(204, "Kursen är bort tagen från systemet");
+                return StatusCode(204, "Användaren är bort tagen från systemet");
             }
-            return StatusCode(500, "Ett fel inträffade när kursen skulle tas bort");
+            return StatusCode(500, "Ett fel inträffade när användaren skulle tas bort");
         }
         
     }
