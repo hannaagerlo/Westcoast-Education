@@ -1,55 +1,34 @@
-using AutoMapper;
-using Courses_Api.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Courses_Api.Interface;
-using Courses_Api.Models;
-using Courses_Api.ViewModel;
+using Courses_Api.ViewModel.Student;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/courses")]
-    public class CourseController : ControllerBase
+    [Route("api/v1/students")]
+    public class StudentController : ControllerBase
     {
-        private readonly ICoursesRepository _courseRepo;
-
-        public CourseController(ICoursesRepository courseRepo)
+        private readonly IStudentRepository _studentRepo;
+        public StudentController(IStudentRepository studentRepo)
         {
-            _courseRepo = courseRepo;
+            _studentRepo = studentRepo;
         }
 
-        // GET
-        [HttpGet]
-        public async Task<ActionResult<List<CourseViewModel>>> ListCourses()
+         [HttpGet]
+        public async Task<ActionResult<List<StudentViewModel>>> ListCourses()
         {
-             return Ok(await _courseRepo.ListAllCoursesAsync());
-
-            // var response = await _courseRepo.ListAllCoursesAsync();
-            // var courseList = new List<CourseViewModel>();
-
-            // foreach(var course in response)
-            // {
-            //     courseList.Add(
-            //         new CourseViewModel{
-            //             CourseId = course.Id,
-            //             CourseNumber = course.CourseNumber,
-            //             Title = course.Title,
-            //             Lenght = course.Lenght,
-            //             Category = course.Category,
-            //             Description = course.Description,
-            //             Details = course.Details
-            //         }
-            //     );
-            // }
-            // return Ok(courseList);
+             return Ok(await _studentRepo.ListAllCoursesAsync());
 
         
         }
 
         // GET Category
         [HttpGet("/bycategory{category}")]
-        public async Task<ActionResult<Course>> GetCourseByCategory(string category)
+        public async Task<ActionResult<StudentViewModel>> GetCourseByCategory(string category)
         {
             var response = await _courseRepo.GetCourseAsync(category);
             
@@ -113,7 +92,5 @@ namespace Courses_Api.Controllers
             return StatusCode(500, "Ett fel inträffade när kursen skulle tas bort");
         }
         
-        
-       
     }
 }
