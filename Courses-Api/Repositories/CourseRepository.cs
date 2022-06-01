@@ -10,9 +10,9 @@ namespace Courses_Api.Repositories
 {
     public class CourseRepository : ICoursesRepository
     {
-        private readonly CourseContext _context;
+        private readonly EducationContext _context;
         private readonly IMapper _mapper;
-        public CourseRepository(CourseContext context, IMapper mapper)
+        public CourseRepository(EducationContext context, IMapper mapper)
         {
             _mapper = mapper;
             _context = context;

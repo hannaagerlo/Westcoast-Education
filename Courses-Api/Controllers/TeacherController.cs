@@ -25,7 +25,16 @@ namespace Courses_Api.Controllers
         }
 
         // Sök/lista lärare efter Id nummer. 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<TeacherViewModel>>> GetTeacherById(int id)
+        {
+            var response = await _teacherRepo.GetTeacherAsync(id);
+            
+            if(response is null)
+            return NotFound($"Det gick inte att hitta några kurser med kategorin: {id}");
 
+            return Ok(response);
+        }  
     
         //POST
         [HttpPost]

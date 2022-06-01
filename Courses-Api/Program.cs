@@ -9,11 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 // Databas kopplingen
-builder.Services.AddDbContext<CourseContext>(options => 
+builder.Services.AddDbContext<EducationContext>(options => 
 options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
 // Dependacy injection för interface och klasser 
 builder.Services.AddScoped<ICoursesRepository, CourseRepository>(); 
+builder.Services.AddScoped<IStudentRepository, StudentRepository>(); 
+builder.Services.AddScoped<ITeacherRepository, TeacherRepository>(); 
 
 // Add Automapper
 builder.Services.AddAutoMapper(typeof(AutoMappersProfiles).Assembly);

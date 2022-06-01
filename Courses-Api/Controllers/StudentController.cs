@@ -69,9 +69,9 @@ namespace Courses_Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCourseAsync(int id, PostStudentViewModel course)
+        public async Task<ActionResult> UpdateCstudentAsync(int id, PostStudentViewModel student)
         {
-            await _studentRepo.UpdateStudentAsync(id, course);
+            await _studentRepo.UpdateStudentAsync(id, student);
             if(await _studentRepo.SaveAllAsync())
             {
                 return StatusCode(204, "Användaren är uppdaterad");

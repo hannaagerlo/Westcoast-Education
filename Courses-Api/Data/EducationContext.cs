@@ -7,13 +7,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Data
 {
-    public class CourseContext : DbContext
+        public class EducationContext : DbContext
     {
-        public CourseContext(DbContextOptions options) : base(options){}
+        public EducationContext(DbContextOptions options) : base(options){}
 
         public DbSet<Course> Courses => Set<Course>(); 
         public DbSet<Student> Students => Set<Student>(); 
         public DbSet<Teacher> Teachers => Set<Teacher>(); 
         
     }
+    
 }

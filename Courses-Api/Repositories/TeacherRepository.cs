@@ -3,50 +3,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Courses_Api.Data;
 using Courses_Api.Interface;
+using Courses_Api.Models;
 using Courses_Api.ViewModel.Teacher;
+using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Repositories
 {
     public class TeacherRepository : ITeacherRepository
     {
-        private readonly CourseContext _context;
+        private readonly EducationContext _context;
         private readonly IMapper _mapper;
-        public TeacherRepository(CourseContext context, IMapper mapper)
+        public TeacherRepository(EducationContext context, IMapper mapper)
         {
             _mapper = mapper;
             _context = context;
         }
 
-        public Task AddTeacherAsync(PostTeacherViewModel teacher)
+        public async Task AddTeacherAsync(PostTeacherViewModel teacher)
         {
-            throw new NotImplementedException();
+            var teacherToAdd = _mapper.Map<Teacher>(teacher);
+           await _context.Teachers.AddAsync(teacherToAdd); 
         }
 
-        public Task DeleteTeacherAsync(int id)
+        public async Task DeleteTeacherAsync(int id)
         {
-            throw new NotImplementedException();
+           var response = await _context.Teachers.FindAsync(id);
+            if(response is null)
+            {
+                throw new Exception($"Det finns ingen användare med id: {id}");
+            }
+            if(response is not null)
+            {
+                _context.Teachers.Remove(response);
+            }
         }
 
-        public Task<TeacherViewModel?> GetTeacherAsync(int id)
+        public async Task<TeacherViewModel?> GetTeacherAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Teachers.Where(s => s.Id == id)
+            .ProjectTo<TeacherViewModel>(_mapper.ConfigurationProvider)
+            .SingleOrDefaultAsync();
         }
 
-        public Task<List<TeacherViewModel>> ListAllTeachersAsync()
+        public async Task<List<TeacherViewModel>> ListAllTeachersAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Teachers.ProjectTo<TeacherViewModel>(_mapper.ConfigurationProvider).ToListAsync();
         }
 
-        public Task<bool> SaveAllAsync()
+        public async Task<bool> SaveAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public Task UpdateTeacherAsync(int id, PostTeacherViewModel teacher)
+        public async Task UpdateTeacherAsync(int id, PostTeacherViewModel teacher)
         {
-            throw new NotImplementedException();
+            var teacherToUpdate = await _context.Teachers.FindAsync(id);
+
+            if(teacherToUpdate is null)
+            {
+                throw new Exception($"Det finns ingen användare med id: {id}");
+            }
+            teacherToUpdate.Firstname = teacher.Firstname;
+            teacherToUpdate.Lastname = teacher.Lastname;
+            teacherToUpdate.EmailAdress = teacher.EmailAdress;
+            teacherToUpdate.PhoneNumber = teacher.PhoneNumber;
+            teacherToUpdate.StreetAddress = teacher.StreetAddress;
+            teacherToUpdate.PostalCode = teacher.PostalCode;
+            teacherToUpdate.Municipality = teacher.Municipality;
+
+
+            _context.Teachers.Update(teacherToUpdate);
         }
     }
 }
