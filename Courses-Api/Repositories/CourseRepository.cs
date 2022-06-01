@@ -43,7 +43,7 @@ namespace Courses_Api.Repositories
             return await _context.Courses.Where(c => c.Category == category)
             .ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();
-        }
+        }   
 
         public async Task<List<CourseViewModel>> ListAllCoursesAsync()
         {

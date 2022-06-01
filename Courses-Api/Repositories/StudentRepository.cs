@@ -7,6 +7,7 @@ using AutoMapper.QueryableExtensions;
 using Courses_Api.Data;
 using Courses_Api.Interface;
 using Courses_Api.Models;
+using Courses_Api.ViewModel;
 using Courses_Api.ViewModel.Student;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,6 +47,31 @@ namespace Courses_Api.Repositories
         {
             return await _context.Students.Where(s => s.Id == id)
             .ProjectTo<StudentViewModel>(_mapper.ConfigurationProvider)
+            .SingleOrDefaultAsync();
+        }
+
+        public async Task<StudentWithCoursesViewModel?> GetStudentWithCourses(int id)
+        {
+            return await _context.Students.Where(e => e.Id == id).Include(e => e.Courses)
+            .Select(s => new StudentWithCoursesViewModel
+            {
+                StudentId = s.Id,
+                StudentName = string.Concat(s.Firstname, " ", s.Lastname),
+                EmailAdress = s.EmailAdress,
+                PhoneNumber = s.PhoneNumber,
+                Adress = string.Concat(s.StreetAddress, ", ", s.PostalCode, " ", s.Municipality),
+                Courses = s.Courses
+                .Select(c => new CourseViewModel
+                {
+                    CourseId = c.Id,
+                    CourseNumber = c.CourseNumber,
+                    Title = c.Title,
+                    Lenght = c.Lenght,
+                    Category = c.Category,
+                    Description = c.Description,
+                    Details = c.Details
+                }).ToList()
+            })
             .SingleOrDefaultAsync();
         }
 

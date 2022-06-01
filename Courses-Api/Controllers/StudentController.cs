@@ -34,7 +34,18 @@ namespace Courses_Api.Controllers
             return NotFound($"Det gick inte att hitta några kurser med kategorin: {id}");
 
             return Ok(response);
-        }      
+        }   
+
+        [HttpGet("studentsWithCourses/{id}")]
+        public async Task<ActionResult> GetStudentWithCourses(int id)
+        {
+            var response = await _studentRepo.GetStudentWithCourses(id);
+            
+            if(response is null)
+            return NotFound($"Det gick inte att hitta några kurser: ");
+
+            return Ok(response);
+        }    
         
     
         //POST
@@ -48,24 +59,6 @@ namespace Courses_Api.Controllers
                     return StatusCode(201);
                 }
                 return StatusCode(500, "Det gick inte att spara den nya användaren");
-
-
-                
-
-            
-            // var courseToAdd = new Course
-            // {
-            //     CourseNumber = course.CourseNumber,
-            //     Title = course.Title,
-            //     Lenght = course.Lenght,
-            //     Category = course.Category,
-            //     Description = course.Description,
-            //     Details = course.Details
-            // };
-            // await _context.Courses.AddAsync(courseToAdd);
-            // await _context.SaveChangesAsync();
-            // return StatusCode(201, course);
-        
         }
 
         [HttpPut("{id}")]

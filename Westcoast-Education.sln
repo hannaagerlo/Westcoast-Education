@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses-Api", "Courses-API\Courses-Api.csproj", "{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{3ED88D5E-B0AD-4DC4-9672-696FAFE842B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInterface", "Clients\CustomerInterface\CustomerInterface.csproj", "{010FDF30-F865-4D53-B06E-1B551A86723A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{010FDF30-F865-4D53-B06E-1B551A86723A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010FDF30-F865-4D53-B06E-1B551A86723A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010FDF30-F865-4D53-B06E-1B551A86723A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010FDF30-F865-4D53-B06E-1B551A86723A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{010FDF30-F865-4D53-B06E-1B551A86723A} = {3ED88D5E-B0AD-4DC4-9672-696FAFE842B8}
 	EndGlobalSection
 EndGlobal
