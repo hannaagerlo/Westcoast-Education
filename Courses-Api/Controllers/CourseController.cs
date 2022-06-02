@@ -20,7 +20,7 @@ namespace Courses_Api.Controllers
         }
 
         // GET
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<ActionResult<List<CourseViewModel>>> ListCourses()
         {
              return Ok(await _courseRepo.ListAllCoursesAsync());
