@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Courses_Api.Data.Migrations
 {
     [DbContext(typeof(EducationContext))]
-    [Migration("20220601061803_initialCreate")]
-    partial class initialCreate
+    [Migration("20220603162753_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,9 @@ namespace Courses_Api.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Details")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Lenght")

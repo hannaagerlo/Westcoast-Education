@@ -15,5 +15,6 @@ namespace Courses_Api.ViewModel
         public string? Category { get; set; }
         public string? Description { get; set; }
         public string? Details { get; set; }
+         public string? ImageUrl { get; set; }
     }
 }

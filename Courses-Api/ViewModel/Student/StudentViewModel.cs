@@ -12,5 +12,8 @@ namespace Courses_Api.ViewModel.Student
         public string? EmailAdress { get; set; }
         public string? PhoneNumber { get; set; }
         public string? Adress { get; set; }
+        public DateTime Expires { get; set; }
+         public string? Token { get; set; }
+    
     }
 }

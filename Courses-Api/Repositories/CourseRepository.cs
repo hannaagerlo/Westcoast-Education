@@ -38,11 +38,12 @@ namespace Courses_Api.Repositories
             }
         }
 
-        public async Task<CourseViewModel?> GetCourseAsync(string category)
+        public async Task<List<CourseViewModel>> GetCourseAsync(string category)
         {
-            return await _context.Courses.Where(c => c.Category == category)
+            return await _context.Courses.Where(c => c.Category!.ToLower() == category.ToLower())
             .ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider)
-            .SingleOrDefaultAsync();
+            .ToListAsync();
+             
         }   
 
         public async Task<List<CourseViewModel>> ListAllCoursesAsync()
@@ -63,6 +64,7 @@ namespace Courses_Api.Repositories
             courseToUpdate.Category = course.Category;
             courseToUpdate.Description = course.Description;
             courseToUpdate.Details = course.Details;
+            courseToUpdate.ImageUrl = course.ImageUrl;
 
             _context.Courses.Update(courseToUpdate);
 
@@ -73,6 +75,11 @@ namespace Courses_Api.Repositories
             return await _context.SaveChangesAsync() > 0;
         }
 
-       
+        public async Task<CourseViewModel?> GetCourseByIdAsync(int id)
+        {
+            return await _context.Courses.Where(c => c.Id == id)
+          .ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider)
+          .SingleOrDefaultAsync();
+        }
     }
 }

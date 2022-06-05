@@ -46,10 +46,24 @@ namespace Courses_Api.Controllers
 
         
         }
+        [HttpGet("{id}")]    
+        public async Task<ActionResult<CourseViewModel>> GetCourseById(int id)
+        {
+            
+            var response = await _courseRepo.GetCourseByIdAsync(id);
+
+            
+            if (response is null)
+                
+                return NotFound($"Vi kunde inte hitta någon kurs med id: {id}");
+
+            
+            return Ok(response);
+        }
 
         // GET Category
-        [HttpGet("/bycategory{category}")]
-        public async Task<ActionResult<Course>> GetCourseByCategory(string category)
+        [HttpGet("bycategory/{category}")]
+        public async Task<ActionResult<List<CourseViewModel>>> GetCourseByCategory(string category)
         {
             var response = await _courseRepo.GetCourseAsync(category);
             

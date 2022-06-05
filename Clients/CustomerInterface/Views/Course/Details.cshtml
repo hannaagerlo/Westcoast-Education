@@ -1,0 +1,16 @@
+@model CustomerInterface.ViewModels.CourseViewModel
+
+<article class="course-detail">
+  <h1 class="page-title">@Model!.Title</h1>
+  <img src="@Model.ImageUrl" alt="@Model.Title" courseId="@Model.CourseId">
+  <section class="course-description">
+    <div>Kursnummer @Model.CourseNumber</div>
+    <div>Längd @Model.Lenght</div>
+    <h2>Kategori @Model.Category</h2>
+    <h2>Detaljer @Model.Details</h2>
+    <hr>
+    <h4>Beskrivning</h4>
+    <p>@Model.Description</p>
+    <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Tillbaka till kursutbudet</a>
+  </section>
+</article>

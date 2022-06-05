@@ -1,0 +1,42 @@
+@model IEnumerable<CustomerInterface.ViewModels.CourseViewModel>
+
+    @section styles{
+    <link rel="stylesheet" href="~/css/styles.css">
+}
+@{
+    ViewData["Title"] = "Kurser";
+    ViewBag.PageTitle = "Kurser";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1> 
+<div>
+    <form asp-controller="Course" asp-action="Search" method="post">
+        <input type="text" name="searchString" placeholder="Sök efter kategori">
+            <input type="submit" value="Filter" placeholder="Sök">
+    </form>
+</div>
+
+<article>
+    <section class="gallery-wrapper">
+        @foreach (var course in Model!)
+        {
+            <div class="gallery-card">
+                <h4>@course.Title</h4>
+                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.CourseId">
+                    <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200">
+                </a>
+                <p>@course.CourseNumber @course.Lenght</p>
+            </div>
+        }
+    </section>
+</article>
+
+@* <div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <div class="modal-container"></div>
+</div>
+<div class="overlay hidden"></div> *@
+
+@* @section scripts{
+    <script src="~/js/App.js"></script>
+} *@

@@ -14,6 +14,7 @@ namespace Courses_Api.Models
         public string? Category { get; set; }   
         public string? Description { get; set; }
         public string? Details { get; set; }
+        public string? ImageUrl { get; set; }
 
         public ICollection<Student> Students { get; set; } = new List<Student>();
         public Teacher Teachers { get; set; } = new Teacher();

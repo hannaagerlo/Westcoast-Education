@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Courses_Api.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Data
 {
-        public class EducationContext : DbContext
+        public class EducationContext : IdentityDbContext
     {
         public EducationContext(DbContextOptions options) : base(options){}
 
