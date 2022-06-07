@@ -77,7 +77,6 @@ namespace CustomerInterface.Controllers
             var course =  new CreateCourseViewModel();
             return View("Create", course);
         }
-
         [HttpPost("Create")]
         public async Task<IActionResult> Create(CreateCourseViewModel course){
 
@@ -92,8 +91,5 @@ namespace CustomerInterface.Controllers
             }
             return View("Create", course);
         }
-
-        
-
     }
 }

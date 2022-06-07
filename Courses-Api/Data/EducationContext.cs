@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Data
 {
-        public class EducationContext : IdentityDbContext
+        public class EducationContext : IdentityDbContext<Admin>
     {
-        public EducationContext(DbContextOptions options) : base(options){}
+        public EducationContext(DbContextOptions<EducationContext> options) : base(options){}
 
         public DbSet<Course> Courses => Set<Course>(); 
         public DbSet<Student> Students => Set<Student>(); 

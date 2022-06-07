@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Courses_Api.Models
 {
@@ -17,6 +18,7 @@ namespace Courses_Api.Models
         public string? StreetAddress { get; set; }
         public string? PostalCode { get; set; }
         public string? Municipality { get; set; }
+
 
         public ICollection<Course> Courses { get; set; } = new List<Course>();
 

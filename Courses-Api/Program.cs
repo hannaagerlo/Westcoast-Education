@@ -2,6 +2,7 @@ using System.Text;
 using Courses_Api.Data;
 using Courses_Api.Helpers;
 using Courses_Api.Interface;
+using Courses_Api.Models;
 using Courses_Api.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
