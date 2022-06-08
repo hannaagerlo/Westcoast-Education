@@ -84,6 +84,15 @@ namespace Courses_Api.Controllers
             }
             return StatusCode(500, "Ett fel inträffade när användaren skulle tas bort");
         }
-        
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> AddCourseToStudent(int id, PatchStudentViewModel model)
+        {
+            await _studentRepo.AddCourseToStudent(id, model);
+            if(await _studentRepo.SaveAllAsync())
+            {
+                return StatusCode(204, "Användaren är uppdaterad");
+            }
+            return StatusCode(500, "Ett fel har inträffat");
+        }
     }
 }

@@ -37,6 +37,7 @@ namespace CustomerInterface.Controllers
            }
             
         }
+        
 
         [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(int id)
