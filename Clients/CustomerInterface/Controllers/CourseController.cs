@@ -92,5 +92,36 @@ namespace CustomerInterface.Controllers
             }
             return View("Create", course);
         }
+
+        [HttpGet("Delete")]
+        public async Task<IActionResult> GetDelete(int id)
+        {
+            try
+            {
+                var course = await _courseService.FindByIdCourse(id);  
+                return View("Delete", course);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        [HttpPost("Delete")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _courseService.DeleteCourse(id);  
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                
+                return View("Delete", _courseService.FindByIdCourse(id));
+            }
+        }
+        
+       
     }
 }

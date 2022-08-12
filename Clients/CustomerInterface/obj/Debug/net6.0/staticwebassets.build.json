@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rV+UPWe/XcNoIaaGD+E6R7HeeaEOQhgn9D749I+VRk4=",
+  "Hash": "1NrjNP4bRoUCYPs5qQ78bj0E7EjYmd6zNff+l9bR5l0=",
   "Source": "CustomerInterface",
   "BasePath": "_content/CustomerInterface",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CustomerInterface\\wwwroot",
       "Source": "CustomerInterface",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CustomerInterface.styles.css",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CustomerInterface.styles.css",
       "SourceId": "CustomerInterface",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "CustomerInterface.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CustomerInterface.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CustomerInterface.styles.css"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CustomerInterface.bundle.scp.css",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CustomerInterface.bundle.scp.css",
       "SourceId": "CustomerInterface",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "CustomerInterface.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CustomerInterface.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CustomerInterface.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\css\\styles.css",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\css\\styles.css",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "css/styles.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\favicon.ico",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\.Net.jpg",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\.Net.jpg",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "Images/.Net.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\.Net.jpg"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\apputvecklare.webp",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\apputvecklare.webp",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "Images/apputvecklare.webp",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\apputvecklare.webp"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\ItProject.webp",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\ItProject.webp",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "Images/ItProject.webp",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\ItProject.webp"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\UiDesign.jpg",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\UiDesign.jpg",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "Images/UiDesign.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\UiDesign.jpg"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\Uxdesign.jpg",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\Images\\Uxdesign.jpg",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "Images/Uxdesign.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\Uxdesign.jpg"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\js\\App.js",
+      "Identity": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\js\\App.js",
       "SourceId": "CustomerInterface",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Hanna\\source\\repos\\Programmering 1 - Basic\\Westcoast-Education\\Clients\\CustomerInterface\\wwwroot\\",
       "BasePath": "_content/CustomerInterface",
       "RelativePath": "js/App.js",
       "AssetKind": "All",

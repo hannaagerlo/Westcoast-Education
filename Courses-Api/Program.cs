@@ -1,6 +1,7 @@
 using System.Text;
 using Courses_Api.Data;
 using Courses_Api.Helpers;
+using Courses_Api.Helpers.UserHelper;
 using Courses_Api.Interface;
 using Courses_Api.Models;
 using Courses_Api.Repositories;
@@ -56,6 +57,8 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<ICoursesRepository, CourseRepository>(); 
 builder.Services.AddScoped<IStudentRepository, StudentRepository>(); 
 builder.Services.AddScoped<ITeacherRepository, TeacherRepository>(); 
+builder.Services.AddScoped<IUserHelper, UserHelper>(); 
+
 
 // Add Automapper
 builder.Services.AddAutoMapper(typeof(AutoMappersProfiles).Assembly);

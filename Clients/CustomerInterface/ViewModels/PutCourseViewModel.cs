@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CustomerInterface.ViewModels
+{
+    public class PutCourseViewModel
+    {
+        [Required(ErrorMessage = "Kursnamn är obligatoriskt")]
+        [Display(Name = "Kursnummer")]
+        public int CourseNumber { get; set; }
+        [Required(ErrorMessage = "Kursnamn är obligatoriskt")]
+        [Display(Name = "Kursnamn")]
+        public string? Title { get; set; }
+        [Required(ErrorMessage = "Längd är obligatoriskt")]
+        [Display(Name = "Kurslängd")]
+        public string? Lenght { get; set; }
+        [Required(ErrorMessage = "Kategori är obligatoriskt")]
+        [Display(Name = "Kategori")]
+        public string? Category { get; set; }
+        [Required(ErrorMessage = "Beskrivning är obligatoriskt")]
+        [Display(Name = "Beskrivning av kursen")]
+        public string? Description { get; set; }
+        
+        [Required(ErrorMessage = "Detaljer av bilen är obligatoriskt")]
+        [Display(Name = "Detaljer/infomation")]
+        public string? Details { get; set; }
+
+        [Required(ErrorMessage = "Bild är obligatoriskt")]
+        [Display(Name = "Skicka upp en bild")]
+        public string? ImageUrl { get; set; }
+    }
+}

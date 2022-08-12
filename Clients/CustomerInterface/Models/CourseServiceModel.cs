@@ -59,22 +59,6 @@ namespace CustomerInterface.Models
         }
         public async Task<List<CourseViewModel>> FindByCategory(string category)
         {
-            // var baseUrl = _config.GetValue<string>("baseUrl");
-            // var url = $"{baseUrl}/courses/bycategory/{category}";
-
-            // using var Http = new HttpClient();
-            // var response = await Http.GetAsync(url);
-
-            // if(!response.IsSuccessStatusCode)
-            // {
-            //     Console.WriteLine("Det gick inte att hitta kursen");
-            // }
-
-            // // var course = await response.Content.ReadFromJsonAsync<List<CourseViewModel>>();
-            // var result = await response.Content.ReadAsStringAsync();
-            // var courses = JsonSerializer.Deserialize<List<CourseViewModel>>(result, _options);
-            // return courses ?? new List<CourseViewModel>();
-
 
             var url = $"{_baseUrl}/bycategory/{category}";
             using var http = new HttpClient();
@@ -106,7 +90,34 @@ namespace CustomerInterface.Models
 
             return true;
         }
-        
+        //  public async Task<bool> EditCourse(int id)
+        // {
+        //    var baseUrl = _config.GetValue<string>("baseUrl");
+        //     var url = $"{baseUrl}/courses/{id}";
+
+        //     using var Http = new HttpClient();
+        //     var response = await Http.PutAsync(url);
+
+        //     if(!response.IsSuccessStatusCode)
+        //     {
+        //         Console.WriteLine("Det gick inte att hitta kursen");
+        //     }
+        //     return true;
+        // }
+        public async Task<bool> DeleteCourse(int id)
+        {
+            var baseUrl = _config.GetValue<string>("baseUrl");
+            var url = $"{baseUrl}/courses/{id}";
+
+            using var Http = new HttpClient();
+            var response = await Http.DeleteAsync(url);
+
+            if(!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Det gick inte att ta bort kursen");
+            }
+            return true;
+        }
 
     }
 

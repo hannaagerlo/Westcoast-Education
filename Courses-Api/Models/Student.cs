@@ -18,6 +18,7 @@ namespace Courses_Api.Models
         public string? StreetAddress { get; set; }
         public string? PostalCode { get; set; }
         public string? Municipality { get; set; }
+        public bool IsLoggedIn { get; set; } 
 
 
         public ICollection<Course> Courses { get; set; } = new List<Course>();

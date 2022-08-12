@@ -25,6 +25,7 @@ namespace Courses_Api.Repositories
 
         public async Task AddStudentAsync(PostStudentViewModel student)
         {
+            student.IsLoggedIn = true;
             var studentToAdd = _mapper.Map<Student>(student);
            await _context.Students.AddAsync(studentToAdd); 
             
@@ -68,8 +69,6 @@ namespace Courses_Api.Repositories
                     Title = c.Title,
                     Lenght = c.Lenght,
                     Category = c.Category,
-                    Description = c.Description,
-                    Details = c.Details
                 }).ToList()
             })
             .SingleOrDefaultAsync();
@@ -103,6 +102,15 @@ namespace Courses_Api.Repositories
 
 
             _context.Students.Update(studentToUpdate);
+        }
+        public async Task AddCourseToStudent(int courseId, int studentId)
+        {
+            var student = _context.Students.SingleOrDefault(x => x.Id == studentId);
+            var course = _context.Courses.SingleOrDefault(x => x.Id == courseId);
+
+            student.Courses.Add(course);
+            _context.Students.Update(student);
+            
         }
     }
 }

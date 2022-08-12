@@ -1,4 +1,4 @@
-@model CustomerInterface.ViewModels.CourseViewModel
+@model IEnumerable<CustomerInterface.ViewModels.CourseViewModel>
 
 @* <article>
     <section class="gallery-wrapper">
@@ -14,7 +14,7 @@
         }
     </section>
 </article> *@
-<article class="course-detail">
+@* <article class="course-detail">
   <h1 class="page-title">@Model!.Title</h1>
   <img src="@Model.ImageUrl" alt="@Model.Title" courseId="@Model.CourseId">
   <section class="course-description">
@@ -27,4 +27,18 @@
     <p>@Model.Description</p>
     <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Tillbaka till kursutbudet</a>
   </section>
+</article> *@
+<article>
+    <section class="gallery-wrapper">
+        @foreach (var course in Model!)
+        {
+            <div class="gallery-card">
+                <h4>@course.Title</h4>
+                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.CourseId">
+                    <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200">
+                </a>
+                <p>@course.CourseNumber @course.Lenght</p>
+            </div>
+        }
+    </section>
 </article>

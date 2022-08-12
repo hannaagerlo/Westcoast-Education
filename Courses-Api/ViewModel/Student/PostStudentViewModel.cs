@@ -16,7 +16,9 @@ namespace Courses_Api.ViewModel.Student
         public string? StreetAddress { get; set; }
         public string? PostalCode { get; set; }
         public string? Municipality { get; set; }
-        public DateTime Expires { get; set; }
-         public string? Token { get; set; }
+        public bool IsLoggedIn { get; set; } 
+
+        // public DateTime Expires { get; set; }
+        //  public string? Token { get; set; }
     }
 }

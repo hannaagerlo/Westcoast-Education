@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Courses_Api.Helpers.UserHelper;
 using Courses_Api.Interface;
 using Courses_Api.ViewModel.Student;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,12 @@ namespace Courses_Api.Controllers
     public class StudentController : ControllerBase
     {
         private readonly IStudentRepository _studentRepo;
-        public StudentController(IStudentRepository studentRepo)
+        private readonly IUserHelper _userHelper;
+
+        public StudentController(IStudentRepository studentRepo, IUserHelper userHelper)
         {
             _studentRepo = studentRepo;
+            _userHelper = userHelper;
         }
 
          [HttpGet]
@@ -62,7 +66,7 @@ namespace Courses_Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCstudentAsync(int id, PostStudentViewModel student)
+        public async Task<ActionResult> UpdateStudentAsync(int id, PostStudentViewModel student)
         {
             await _studentRepo.UpdateStudentAsync(id, student);
             if(await _studentRepo.SaveAllAsync())
@@ -85,9 +89,9 @@ namespace Courses_Api.Controllers
             return StatusCode(500, "Ett fel inträffade när användaren skulle tas bort");
         }
         [HttpPatch("{id}")]
-        public async Task<ActionResult> AddCourseToStudent(int id, PatchStudentViewModel model)
+        public async Task<ActionResult> AddCourseToStudent(int courseId)
         {
-            await _studentRepo.AddCourseToStudent(id, model);
+            await _studentRepo.AddCourseToStudent(courseId, _userHelper.GetUserId());
             if(await _studentRepo.SaveAllAsync())
             {
                 return StatusCode(204, "Användaren är uppdaterad");

@@ -18,12 +18,13 @@ namespace Courses_Api.Helpers
             CreateMap<Course, CourseViewModel>()
             .ForMember(dest => dest.CourseId, options => options.MapFrom(src => src.Id));
             
-            CreateMap<PostStudentViewModel, Student>();
+            CreateMap<PostStudentViewModel, Student>()
+            .ForMember(dest => dest.IsLoggedIn, options => options.MapFrom(scr => scr.IsLoggedIn));
             CreateMap<Student, StudentViewModel>()
             .ForMember(dest => dest.StudentId, options => options.MapFrom(src => src.Id))
             .ForMember(dest => dest.StudentName, options => options.MapFrom(src => string.Concat(src.Firstname, " ", src.Lastname)))
             .ForMember(dest => dest.Adress, options => options.MapFrom(src => string.Concat(src.StreetAddress, ", ", src.PostalCode, " ", src.Municipality)));
-
+            
             CreateMap<PostTeacherViewModel, Teacher>();
             CreateMap<Teacher, TeacherViewModel>()
             .ForMember(dest => dest.TeacherId, options => options.MapFrom(src => src.Id))
