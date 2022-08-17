@@ -17,5 +17,6 @@ namespace Courses_Api.ViewModel.Teacher
         public string? PostalCode { get; set; }
         public string? Municipality { get; set; }
         public string? Expertise { get; set; }
-    }
+        
+    } 
 }

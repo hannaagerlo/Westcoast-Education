@@ -16,10 +16,13 @@
        <h1 class="logo"><span class="text-primary"><i class="fa-solid fa-binary-slash"></i>Westcoast </span>Education</h1>
        <ul>
            <li><a href="#">HEM</a></li>
-           <li><a asp-controller="Course" asp-action="Index">KURSUTBUD</a></li>
-           <li><a asp-controller="Student" asp-action="Register">REGISTRERA</a></li>
-            <li><a asp-controller="Course" asp-action="Create">LÄGG TILL KURS</a></li>
-           <li><a asp-controller="Admin" asp-action="AdminIndex">ADMIN</a></li>
+           <li><a asp-controller="course" asp-action="Index">Kursutbud</a></li>
+           <li><a asp-controller="student" asp-action="Index">Studenter</a></li>
+           <li><a asp-controller="teacher" asp-action="Index">Lärare</a></li>
+           <li><a asp-controller="student" asp-action="Register">Registera dig</a></li>
+
+            @* <li><a asp-controller="Course" asp-action="Create">LÄGG TILL KURS</a></li>
+           <li><a asp-controller="Admin" asp-action="AdminIndex">ADMIN</a></li> *@
        </ul>
    </nav>
     <main>

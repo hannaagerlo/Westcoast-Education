@@ -8,11 +8,12 @@ namespace CustomerInterface.ViewModels.Student
 {
     public class StudentViewModel
     {
-        [Required(ErrorMessage = "E-post är obligatoriskts")]
-        [EmailAddress(ErrorMessage ="Felagtig e-post")]
+       
+        public int StudentId { get; set; }
+        public string? StudentName { get; set; }
         public string? EmailAdress { get; set; }
-
-         [Required(ErrorMessage = "Lösenord är obligatoriskts")]
-         public string? Password { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Adress { get; set; }
+    
     }
 }

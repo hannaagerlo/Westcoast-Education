@@ -1,0 +1,41 @@
+@model IEnumerable<CustomerInterface.ViewModels.Student.StudentViewModel>
+
+<p>
+    <a asp-action="Create">Skapa ny student</a>
+</p>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAdress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => student.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.EmailAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.PhoneNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = student.StudentId }) |
+                @Html.ActionLink("Details", "Details", new { id = student.StudentId }) |
+                @Html.ActionLink("Delete", "GetDelete", new { id = student.StudentId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

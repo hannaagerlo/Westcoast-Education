@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 using CustomerInterface.ViewModels.Student;
 
 namespace CustomerInterface.Models
@@ -40,6 +36,21 @@ namespace CustomerInterface.Models
             }
 
             return true;
+        }
+         public async Task<List<StudentViewModel>> ListAllStudents()
+        {
+            var url = $"{_baseUrl}";
+            using var http = new HttpClient();
+            var response = await http.GetAsync(url);
+            
+            if(!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Det gick inge vidare");
+            }
+
+            var result = await response.Content.ReadAsStringAsync();
+            var students = JsonSerializer.Deserialize<List<StudentViewModel>>(result, _options);
+            return students ?? new List<StudentViewModel>();
         }
     }
 }

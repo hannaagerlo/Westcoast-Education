@@ -104,6 +104,23 @@ namespace CustomerInterface.Models
         //     }
         //     return true;
         // }
+
+        public async Task<EditCourseViewModel> EditCourse(EditCourseViewModel model)
+        {
+            var url = $"{_baseUrl}";
+
+            using var http = new HttpClient();
+            var response = await http.PutAsJsonAsync(url, model);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Det gick inte att hitta kursen");
+            }
+          
+
+            var course = await response.Content.ReadFromJsonAsync<EditCourseViewModel>();
+            return course ?? new EditCourseViewModel();
+        }
         public async Task<bool> DeleteCourse(int id)
         {
             var baseUrl = _config.GetValue<string>("baseUrl");

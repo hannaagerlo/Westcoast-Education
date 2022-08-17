@@ -1,17 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 using CustomerInterface.Models;
 using CustomerInterface.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace CustomerInterface.Controllers
 {
-    [Route("[controller]")]
+    [Route("course")]
     public class CourseController : Controller
     {
         private readonly IConfiguration _config;
@@ -22,7 +15,7 @@ namespace CustomerInterface.Controllers
             _courseService = new CourseServiceModel(_config);
         }
 
-        [HttpGet]
+        [HttpGet()]
         public async Task<IActionResult> Index() 
         {
            try{
@@ -119,6 +112,40 @@ namespace CustomerInterface.Controllers
             {
                 
                 return View("Delete", _courseService.FindByIdCourse(id));
+            }
+        }
+
+        
+        [HttpGet("Edit/{id}")]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var course = await _courseService.FindByIdCourse(id);
+           
+            return View("Edit", course);
+        }
+
+ 
+        [HttpPost("Edit/{id}")]
+        public async Task<IActionResult> Edit(EditCourseViewModel course)
+        {
+            try
+            {
+                await _courseService.EditCourse(course);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                var courseGetConvert = new EditCourseViewModel
+                {
+                    CourseNumber = course.CourseNumber,
+                    Title = course.Title,
+                    Lenght = course.Lenght,
+                    Category = course.Category,
+                    Description = course.Description,
+                    Details = course.Details,
+                    ImageUrl = course.ImageUrl
+                };
+                return View("Edit", courseGetConvert);
             }
         }
         

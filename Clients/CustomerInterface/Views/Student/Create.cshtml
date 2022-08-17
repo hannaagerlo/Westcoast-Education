@@ -1,0 +1,43 @@
+@model CustomerInterface.ViewModels.Student.CreateStudentViewModel
+
+<h1 class="page-title">Registrera ny student</h1>
+<section class="form-container">
+  <h4>Information</h4>
+  <form class="form" asp-action="Register" method="post">
+    <div class="form-control">
+      <label asp-for="@Model!.Firstname"></label>
+      <input asp-for="@Model!.Firstname" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.Lastname"></label>
+      <input asp-for="@Model!.Lastname" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.EmailAdress"></label>
+      <input asp-for="@Model!.EmailAdress" /> 
+
+           <div class="form-control">
+      <label asp-for="@Model!.Password"></label>
+      <input asp-for="@Model!.Password" />      
+    </div>
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.PhoneNumber"></label>
+      <input asp-for="@Model!.PhoneNumber" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.StreetAddress"></label>
+      <input asp-for="@Model!.StreetAddress" />      
+    </div>
+    <div class="form-control">
+      <label asp-for="@Model!.PostalCode"></label>
+      <input asp-for="@Model!.PostalCode" />      
+    </div>
+        <div class="form-control">
+      <label asp-for="@Model!.Municipality"></label>
+      <input asp-for="@Model!.Municipality" />      
+    </div>
+    <button type="submit" class="btn">Spara</button>
+  </form>
+  <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Gå Tillbaka</a>
+</section>
