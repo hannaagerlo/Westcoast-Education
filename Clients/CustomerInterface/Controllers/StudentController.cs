@@ -70,7 +70,73 @@ namespace CustomerInterface.Controllers
            {
                throw;
            }
+        }
+
+           [HttpGet("GetDelete")]
+        public async Task<ActionResult> GetDelete(int id)
+        {
+            try
+            {
+                var model = await _studentService.GetStudentById(id);
+                return View("Delete", model);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
+        [HttpPost("Delete")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            try
+            {                
+                await _studentService.DeleteStudent(id);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View("Delete", _studentService.GetStudentById(id));
+            }
+        }
+        
+        [HttpGet("Edit")]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var student = await _studentService.GetStudentById(id);
+           
+            return View("Edit", student);
+        }
+
+ 
+        [HttpPost("Edit")]
+        public async Task<IActionResult> Edit(EditStudentViewModel student)
+        {
+            try
+            {
+                await _studentService.EditStudent(student);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                var courseGetConvert = new EditStudentViewModel
+                {
+                    Firstname = student.Firstname,
+                    Lastname = student.Lastname,
+                    EmailAdress = student.EmailAdress,
+                    PhoneNumber = student.PhoneNumber,
+                    StreetAddress = student.StreetAddress,
+                    PostalCode = student.PostalCode,
+                    Municipality = student.Municipality
+
+                };
+                return View("Edit", courseGetConvert);
+            }
+        }
+        
+
             
         }
     }
-}

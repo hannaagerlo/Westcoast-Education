@@ -81,5 +81,21 @@ namespace Courses_Api.Repositories
           .ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider)
           .SingleOrDefaultAsync();
         }
+        public async Task SignUpForCourses(string userEmail, int courseId)
+        {
+            var course = _context.Courses.SingleOrDefault(x => x.Id == courseId);
+
+            if (course is null)
+                throw new FileNotFoundException("Finns ingen kurs med det nummer");
+
+            var student = _context.Students.SingleOrDefault(x => x.EmailAdress == userEmail);
+
+            if (student is null)
+                throw new FileNotFoundException("Finns ingen student med det användarnamnet");
+
+            course.Students.Add(student);
+            _context.Courses.Update(course);
+            await _context.SaveChangesAsync();
+        }
     }
 }

@@ -9,10 +9,15 @@ namespace CustomerInterface.Controllers
     {
         private readonly IConfiguration _config;
         private readonly CourseServiceModel _courseService;
+        private readonly StudentServiceModel _studentService;
+       
         public CourseController(IConfiguration config)
         {
             _config = config;
             _courseService = new CourseServiceModel(_config);
+            
+             _studentService = new StudentServiceModel(_config);
+           
         }
 
         [HttpGet()]
@@ -100,17 +105,17 @@ namespace CustomerInterface.Controllers
                 throw;
             }
         }
+
         [HttpPost("Delete")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             try
-            {
-                await _courseService.DeleteCourse(id);  
+            {                
+                await _courseService.DeleteCourse(id);
                 return RedirectToAction("Index");
             }
-            catch (Exception)
+            catch
             {
-                
                 return View("Delete", _courseService.FindByIdCourse(id));
             }
         }
@@ -148,7 +153,39 @@ namespace CustomerInterface.Controllers
                 return View("Edit", courseGetConvert);
             }
         }
-        
+        // [HttpGet("signup")]
+        // public async Task<IActionResult> SignUp(int id)
+        // {
+        //     try
+        //     {
+        //         if (await _studentService.GetStudent() is null)
+        //             throw new Exception("Ingen inloggad användare");
+
+        //         await _courseService.SignUp(id);
+        //         return RedirectToAction("Index");
+        //     }
+        //     catch (Exception)
+        //     {
+        //         return RedirectToAction("Create", "Student");
+        //     }
+        // }
+
+        [HttpGet("signup")]
+        public async Task<IActionResult> SignUp(int id)
+        {
+            try
+            {
+                if (await _studentService.GetStudent() is null)
+                    throw new Exception("Ingen inloggad användare");
+
+                await _courseService.SignUp(id);
+                return View("CourseConfirmation");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Register", "Student");
+            }
+        }
        
     }
 }

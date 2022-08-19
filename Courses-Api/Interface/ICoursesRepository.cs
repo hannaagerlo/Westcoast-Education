@@ -11,6 +11,7 @@ namespace Courses_Api.Interface
         public Task AddCourseAsync(PostCoursesViewModel course);
         public Task UpdateCourseAsync(int id, PostCoursesViewModel course);
         public Task DeleteCourseAsync(int id);
+         Task SignUpForCourses(string userName, int courseNumber);
         public Task<bool> SaveAllAsync();
 
         

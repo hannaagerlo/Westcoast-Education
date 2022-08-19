@@ -1,5 +1,6 @@
 using AutoMapper;
 using Courses_Api.Data;
+using Courses_Api.Helpers.UserHelper;
 using Courses_Api.Interface;
 using Courses_Api.Models;
 using Courses_Api.ViewModel;
@@ -13,10 +14,12 @@ namespace Courses_Api.Controllers
     public class CourseController : ControllerBase
     {
         private readonly ICoursesRepository _courseRepo;
+        private readonly IUserHelper _userHelper;
 
-        public CourseController(ICoursesRepository courseRepo)
+        public CourseController(ICoursesRepository courseRepo, IUserHelper userHelper)
         {
             _courseRepo = courseRepo;
+            _userHelper = userHelper;
         }
 
         // GET
@@ -128,6 +131,17 @@ namespace Courses_Api.Controllers
         }
         
         
-       
+       [HttpPost("signup/{courseId}")]
+        public async Task<ActionResult> SignUpForCourses(int courseId)
+        {
+            var loggedInStudent = _userHelper.LoggedInStudent()?.EmailAdress;
+
+            if (loggedInStudent is null)
+                throw new Exception("Ingen användare är inloggad");
+
+            await _courseRepo.SignUpForCourses(loggedInStudent, courseId);
+
+            return Ok();
+        }
     }
 }

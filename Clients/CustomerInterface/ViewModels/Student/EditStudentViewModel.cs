@@ -1,6 +1,5 @@
-namespace Courses_Api.ViewModel.Student
-{
-    public class PostStudentViewModel
+namespace CustomerInterface.ViewModels.Student;
+    public class EditStudentViewModel
     {
          public int Id { get; set; }
         public string? Firstname { get; set; }
@@ -13,4 +12,3 @@ namespace Courses_Api.ViewModel.Student
         public string? Municipality { get; set; }
 
     }
-}

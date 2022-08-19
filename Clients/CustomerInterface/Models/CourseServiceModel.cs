@@ -73,6 +73,7 @@ namespace CustomerInterface.Models
             var courses = JsonSerializer.Deserialize<List<CourseViewModel>>(result, _options);
             return courses ?? new List<CourseViewModel>();
         }
+        
         public async Task<bool> CreateCourse(CreateCourseViewModel course)
         {
             using var http = new HttpClient();
@@ -121,19 +122,46 @@ namespace CustomerInterface.Models
             var course = await response.Content.ReadFromJsonAsync<EditCourseViewModel>();
             return course ?? new EditCourseViewModel();
         }
-        public async Task<bool> DeleteCourse(int id)
+        // public async Task<bool> DeleteCourse(int id)
+        // {
+        //     var baseUrl = _config.GetValue<string>("baseUrl");
+        //     var url = $"{baseUrl}/courses/{id}";
+
+        //     using var Http = new HttpClient();
+        //     var response = await Http.DeleteAsync(url);
+
+        //     if(!response.IsSuccessStatusCode)
+        //     {
+        //         Console.WriteLine("Det gick inte att ta bort kursen");
+        //     }
+        //     return true;
+        // }
+
+    
+
+        public async Task DeleteCourse(int id)
         {
-            var baseUrl = _config.GetValue<string>("baseUrl");
-            var url = $"{baseUrl}/courses/{id}";
+            var url = $"{_baseUrl}/{id}";
 
-            using var Http = new HttpClient();
-            var response = await Http.DeleteAsync(url);
+            using var http = new HttpClient();
+            var response = await http.DeleteAsync(url);
 
-            if(!response.IsSuccessStatusCode)
+            if (!response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Det gick inte att ta bort kursen");
+                throw new Exception("Det gick inget vidare");
             }
-            return true;
+        }
+        public async Task SignUp(int courseId)
+        {
+            var url = $"{_baseUrl}/signup/{courseId}";
+
+            using var http = new HttpClient();
+            var response = await http.PostAsJsonAsync(url, courseId);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Det gick inte att registrera sig på kursen");
+            }
         }
 
     }

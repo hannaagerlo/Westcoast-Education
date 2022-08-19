@@ -37,6 +37,21 @@ namespace CustomerInterface.Controllers
             return View("Register", teacher);
         }
 
+        // [HttpGet()]
+        // public async Task<IActionResult> Index() 
+        // {
+        //    try{
+
+        //        var teachers = await _teacherService.ListAllTeachers();
+        //        return View("Index", teachers);
+
+        //    }
+        //    catch(System.Exception)
+        //    {
+        //        throw;
+        //    }
+            
+        // }
         [HttpGet()]
         public async Task<IActionResult> Index() 
         {
@@ -50,7 +65,6 @@ namespace CustomerInterface.Controllers
            {
                throw;
            }
-            
         }
 
         [HttpGet("GetDelete")]

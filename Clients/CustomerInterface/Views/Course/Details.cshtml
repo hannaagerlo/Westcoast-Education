@@ -12,9 +12,10 @@
     <h4>Beskrivning</h4>
     <p>@Model.Description</p>
     <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Tillbaka till kursutbudet</a>
-    <a class="go-back" asp-action="CourseRegister"><i class="fa-solid fa-left-long"></i>Registera dig på kursen</a>
-    <a class="go-back" asp-action="Edit"><i class="fa-solid fa-left-long"></i>Ändra</a>
-    <a asp-action="Edit" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
-    <a class="go-back" asp-action="Delete"><i class="fa-solid fa-left-long"></i>Ta bort</a>  
+    <a input="submit" asp-action="SignUp" asp-route-id="@Model.CourseId"><i class="fa-solid fa-left-long"></i>Registera dig på kursen</a>
+    <a asp-action="Edit"><i class="fa-solid fa-left-long"></i>Ändra</a>
+    <a asp-action="GetDelete" asp-route-id="@Model.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Ta bort</a>
+
   </section>
 </article>
+

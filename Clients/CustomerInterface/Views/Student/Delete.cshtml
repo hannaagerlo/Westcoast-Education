@@ -1,0 +1,51 @@
+@model CustomerInterface.ViewModels.Student.StudentViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Ta bort</h1>
+
+<h3>Är du säker på att du vill ta bort?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentId)
+        </dd>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailAdress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EmailAdress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+                <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Gå tillbaka</a>
+        <input type="hidden" name="id" value="@Model.StudentId"/>
+    </form>
+</div>
