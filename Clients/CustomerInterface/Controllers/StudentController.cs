@@ -105,7 +105,7 @@ namespace CustomerInterface.Controllers
         [HttpGet("Edit")]
         public async Task<IActionResult> Edit(int id)
         {
-            var student = await _studentService.GetStudentById(id);
+            var student = await _studentService.GetStudentByIdEdit(id);
            
             return View("Edit", student);
         }
@@ -121,7 +121,7 @@ namespace CustomerInterface.Controllers
             }
             catch
             {
-                var courseGetConvert = new EditStudentViewModel
+                var editStudent = new EditStudentViewModel
                 {
                     Firstname = student.Firstname,
                     Lastname = student.Lastname,
@@ -132,9 +132,40 @@ namespace CustomerInterface.Controllers
                     Municipality = student.Municipality
 
                 };
-                return View("Edit", courseGetConvert);
+                return View("Edit", editStudent);
             }
         }
+
+        // [HttpGet("Edit")]
+        // public async Task<IActionResult> Edit(int id)
+        // {
+        //     var student = await _studentService.GetStudentById(id);
+           
+        //     return View("Edit", student);
+        // }
+
+ 
+        // [HttpPost("Edit")]
+        // public async Task<IActionResult> Edit(StudentViewModel student)
+        // {
+        //     try
+        //     {
+        //         await _studentService.EditStudent(student);
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     catch
+        //     {
+        //         var editStudent = new StudentViewModel
+        //         {
+        //             StudentName = student.StudentName,
+        //             EmailAdress = student.EmailAdress,
+        //             PhoneNumber = student.PhoneNumber,
+        //             Adress = student.Adress
+
+        //         };
+        //         return View("Edit", editStudent);
+        //     }
+        // }
         
 
             

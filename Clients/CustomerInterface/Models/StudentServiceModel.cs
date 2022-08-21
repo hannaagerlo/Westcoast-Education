@@ -83,6 +83,31 @@ namespace CustomerInterface.Models
             }
         }
 
+        // public async Task EditStudent(EditStudentViewModel student)
+        // {
+        //     var url = $"{_baseUrl}";
+
+        //     using var http = new HttpClient();
+        //     var response = await http.PutAsJsonAsync(url, student);
+
+        //     if (!response.IsSuccessStatusCode)
+        //     {
+        //         Console.WriteLine("Det gick inte att hitta eleven");
+        //     }            
+        // }
+        //  public async Task EditStudent(StudentViewModel student)
+        // {
+        //     var url = $"{_baseUrl}";
+
+        //     using var http = new HttpClient();
+        //     var response = await http.PutAsJsonAsync(url, student);
+
+        //     if (!response.IsSuccessStatusCode)
+        //     {
+        //         Console.WriteLine("Det gick inte att hitta eleven");
+        //     }            
+        // }
+
         public async Task EditStudent(EditStudentViewModel student)
         {
             var url = $"{_baseUrl}";
@@ -110,6 +135,22 @@ namespace CustomerInterface.Models
             var loggedInStudent = await response.Content.ReadFromJsonAsync<StudentViewModel>();
 
             return loggedInStudent;
+        }
+        public async Task<EditStudentViewModel> GetStudentByIdEdit(int id)
+        {
+            var baseUrl = _config.GetValue<string>("baseUrl");
+            var url = $"{baseUrl}/students/{id}";
+
+            using var Http = new HttpClient();
+            var response = await Http.GetAsync(url);
+
+            if(!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Det gick inte att hitta studenten");
+            }
+
+            var student = await response.Content.ReadFromJsonAsync<EditStudentViewModel>();
+            return student ?? new EditStudentViewModel();
         }
 
         

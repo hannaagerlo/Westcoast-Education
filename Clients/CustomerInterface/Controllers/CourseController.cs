@@ -121,7 +121,7 @@ namespace CustomerInterface.Controllers
         }
 
         
-        [HttpGet("Edit/{id}")]
+        [HttpGet("Edit")]
         public async Task<IActionResult> Edit(int id)
         {
             var course = await _courseService.FindByIdCourse(id);
@@ -130,7 +130,7 @@ namespace CustomerInterface.Controllers
         }
 
  
-        [HttpPost("Edit/{id}")]
+        [HttpPost("Edit")]
         public async Task<IActionResult> Edit(EditCourseViewModel course)
         {
             try
@@ -153,6 +153,7 @@ namespace CustomerInterface.Controllers
                 return View("Edit", courseGetConvert);
             }
         }
+
         // [HttpGet("signup")]
         // public async Task<IActionResult> SignUp(int id)
         // {

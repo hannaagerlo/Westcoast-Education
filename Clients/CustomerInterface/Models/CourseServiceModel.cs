@@ -115,7 +115,7 @@ namespace CustomerInterface.Models
 
             if (!response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Det gick inte att hitta kursen");
+                Console.WriteLine("Det gick inte att ändra kursen");
             }
           
 
