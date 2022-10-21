@@ -1,9 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CustomerInterface.ViewModels
 {
     public class EditCourseViewModel
     {
+        // [JsonPropertyName("CourseID")]
+        public int CourseId { get; set; } 
         [Required(ErrorMessage = "Kursnamn är obligatoriskt")]
         [Display(Name = "Kursnummer")]
         public int CourseNumber { get; set; }

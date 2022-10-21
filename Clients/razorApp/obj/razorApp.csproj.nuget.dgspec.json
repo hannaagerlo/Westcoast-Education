@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\razorApp.csproj": {}
+    "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj": {}
   },
   "projects": {
-    "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\razorApp.csproj": {
+    "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\razorApp.csproj",
+        "projectUniqueName": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
         "projectName": "razorApp",
-        "projectPath": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\razorApp.csproj",
+        "projectPath": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
         "packagesPath": "C:\\Users\\Hanna\\.nuget\\packages\\",
-        "outputPath": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\",
+        "outputPath": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hanna\\AppData\\Roaming\\NuGet\\NuGet.Config"

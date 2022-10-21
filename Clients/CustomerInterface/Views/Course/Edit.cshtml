@@ -1,9 +1,9 @@
 @model CustomerInterface.ViewModels.EditCourseViewModel
 
 <h1 class="page-title">Ändra vald kurs</h1>
-<section class="form-container">
+@* <section class="form-container">
   <h4>Kursens information</h4>
-  <form class="form" asp-action="Create" method="post">
+  <form class="form" asp-action="Edit" method="post">
     <div class="form-control">
       <label asp-for="@Model!.CourseNumber"></label>
       <input asp-for="@Model!.CourseNumber" />      
@@ -33,6 +33,60 @@
       <input asp-for="@Model!.ImageUrl" />      
     </div>
 
-    <button type="submit" class="btn">Spara</button>
+    <button type="submit" value="Save" class="btn">Spara</button>
   </form>
-</section>
+</section> *@
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseNumber" class="control-label"></label>
+                <input asp-for="CourseNumber" class="form-control" />
+                <span asp-validation-for="CourseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lenght" class="control-label"></label>
+                <input asp-for="Lenght" class="form-control" />
+                <span asp-validation-for="Lenght" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details" class="control-label"></label>
+                <input asp-for="Details" class="form-control" />
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <input asp-for="CourseId" class="form-control" />
+                <span asp-validation-for="CourseId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+  @section Scripts {
+      @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+  }

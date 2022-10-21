@@ -1,0 +1,51 @@
+@page
+@model razorApp.Pages.Administration.UpdateCourse
+@{
+    ViewData["Title"] = "UpdateCourse";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<header>
+    <h1 class="page-title">Uppatera kursen</h1>
+</header>
+<section class="form-container">
+    <h4>kursens information</h4>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <input type="hidden" asp-for="CourseModel.CourseId">
+            </div>
+                <label asp-for="CourseModel.CourseNumber"></label>
+                <input asp-for="CourseModel.CourseNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="CourseModel.Title"></label>
+                <input asp-for="CourseModel.Title" />
+            </div>
+            <div class="form-control">
+                <label asp-for="CourseModel.Lenght"></label>
+                <input asp-for="CourseModel.Lenght" />
+            </div>
+            <div class="form-control">
+                <label asp-for="CourseModel.Category"></label>
+                <input asp-for="CourseModel.Category" />
+            </div>
+            <div class="form-control">
+                <label asp-for="CourseModel.Description"></label>
+                <input asp-for="CourseModel.Description" />
+            </div>
+            <div class="form-control">
+                <label asp-for="CourseModel.Details"></label>
+                <input asp-for="CourseModel.Details" />
+            </div>
+            <div class="form-control">
+                <label asp-for="CourseModel.ImageUrl"></label>
+                <input asp-for="CourseModel.ImageUrl" />
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>

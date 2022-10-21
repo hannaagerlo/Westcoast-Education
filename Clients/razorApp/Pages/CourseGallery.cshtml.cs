@@ -26,5 +26,9 @@ namespace razorApp.Pages
             using var http = new HttpClient();
             Courses = await http.GetFromJsonAsync<List<CourseViewModel>>(url);
         }
+        public async Task SignUpForCourse()
+        {
+            
+        }
     }
 }

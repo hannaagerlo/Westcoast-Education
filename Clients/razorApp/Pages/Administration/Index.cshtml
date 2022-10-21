@@ -1,0 +1,13 @@
+@page
+@model razorApp.Pages.Administration.Index
+@{
+    ViewData["Title"] = "Administration";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+        <ul>
+            <li><a asp-page="/Administration/CourseGallery">Kurser</a></li>
+            <li><a asp-page="/Administration/StudentGallery">Studenter</a></li>
+            <li><a asp-page="/Administration/TeacherGallery">Lärare</a></li>
+        </ul>

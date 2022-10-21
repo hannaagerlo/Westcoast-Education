@@ -108,10 +108,12 @@ namespace CustomerInterface.Models
 
         public async Task<EditCourseViewModel> EditCourse(EditCourseViewModel model)
         {
-            var url = $"{_baseUrl}";
+            var baseUrl = _config.GetValue<string>("baseUrl");
+            var url = $"{_baseUrl}/{model.CourseId}";
 
             using var http = new HttpClient();
             var response = await http.PutAsJsonAsync(url, model);
+            
 
             if (!response.IsSuccessStatusCode)
             {
@@ -121,6 +123,7 @@ namespace CustomerInterface.Models
 
             var course = await response.Content.ReadFromJsonAsync<EditCourseViewModel>();
             return course ?? new EditCourseViewModel();
+           
         }
         // public async Task<bool> DeleteCourse(int id)
         // {
@@ -162,6 +165,23 @@ namespace CustomerInterface.Models
             {
                 Console.WriteLine("Det gick inte att registrera sig på kursen");
             }
+        }
+
+        public async Task<EditCourseViewModel> FindByIdEditCourse(int id)
+        {
+            var baseUrl = _config.GetValue<string>("baseUrl");
+            var url = $"{baseUrl}/courses/{id}";
+
+            using var Http = new HttpClient();
+            var response = await Http.GetAsync(url);
+
+            if(!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Det gick inte att hitta kursen");
+            }
+
+            var course = await response.Content.ReadFromJsonAsync<EditCourseViewModel>();
+            return course ?? new EditCourseViewModel();
         }
 
     }

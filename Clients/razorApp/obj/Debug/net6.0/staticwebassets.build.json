@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jhtmwP2JO+KNUwZ4yX3raggFcT/wIj7il5qLsTRnjQg=",
+  "Hash": "ICqQdMZNgJyhVy23RfRcF518VDIWtwCdYUjxQVSMUlM=",
   "Source": "razorApp",
   "BasePath": "_content/razorApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "razorApp\\wwwroot",
       "Source": "razorApp",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\",
       "BasePath": "_content/razorApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\razorApp.styles.css",
+      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\razorApp.styles.css",
       "SourceId": "razorApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/razorApp",
       "RelativePath": "razorApp.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\razorApp.styles.css"
+      "OriginalItemSpec": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\razorApp.styles.css"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\razorApp.bundle.scp.css",
+      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\razorApp.bundle.scp.css",
       "SourceId": "razorApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/razorApp",
       "RelativePath": "razorApp.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\razorApp.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\razorApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\wwwroot\\css\\styles.css",
+      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\css\\styles.css",
       "SourceId": "razorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\",
       "BasePath": "_content/razorApp",
       "RelativePath": "css/styles.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
-      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\favicon.ico",
       "SourceId": "razorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\clients\\razorApp\\wwwroot\\",
+      "ContentRoot": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\",
       "BasePath": "_content/razorApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

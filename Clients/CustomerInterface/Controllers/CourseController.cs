@@ -124,13 +124,37 @@ namespace CustomerInterface.Controllers
         [HttpGet("Edit")]
         public async Task<IActionResult> Edit(int id)
         {
-            var course = await _courseService.FindByIdCourse(id);
+            var course = await _courseService.FindByIdEditCourse(id);
            
             return View("Edit", course);
         }
 
  
-        [HttpPost("Edit")]
+        // [HttpPost("Edit")]
+        // public async Task<IActionResult> Edit(EditCourseViewModel course)
+        // {
+        //     try
+        //     {
+        //         await _courseService.EditCourse(course);
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     catch
+        //     {
+        //         var courseGetConvert = new EditCourseViewModel
+        //         {
+        //             CourseNumber = course.CourseNumber,
+        //             Title = course.Title,
+        //             Lenght = course.Lenght,
+        //             Category = course.Category,
+        //             Description = course.Description,
+        //             Details = course.Details,
+        //             ImageUrl = course.ImageUrl
+        //         };
+        //         return View("Edit", courseGetConvert);
+        //     }
+        // }
+         [HttpPost("Edit")]
+         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(EditCourseViewModel course)
         {
             try
@@ -152,6 +176,7 @@ namespace CustomerInterface.Controllers
                 };
                 return View("Edit", courseGetConvert);
             }
+
         }
 
         // [HttpGet("signup")]

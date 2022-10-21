@@ -1,10 +1,16 @@
 @page
 @model razorApp.Pages.CourseGallery
+@section styles{
+<link rel="stylesheet" href="~/css/gallery-page.css">
+}
+
 @{
     ViewData["Title"] = "Våra kurser";
 }
 
 <h1 class="page-title">Våra kurser</h1>
+<div><a asp-page="/Administration/CreateCourse" class="links">Lägg till kurs</a></div>
+
 
 <article>
     <section class="gallery-wrapper">
@@ -12,12 +18,12 @@
         {
             <div class="gallery-card">
                 <h4>@course.Title</h4>
-                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.CourseId">
+                <a asp-page="./Details" asp-route-id="@course.CourseId">
                     <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200">
                 </a>
                 <p>@course.CourseNumber @course.Lenght</p>
-                <a asp-controller="Course" asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Ändra</a>
-
+                @* <a asp-page="/Administration/UpdateCourse" asp-route-id="@course.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Ändra</a> *@
+                <Button class="button">Registrera dig på kursen</Button>
             </div>
         }
     </section>

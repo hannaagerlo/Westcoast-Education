@@ -1,0 +1,37 @@
+@page "/createstudent"
+@model razorApp.Pages.Administration.CreateStudent
+@{
+    ViewData["Title"] = "Create a new student";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<header>
+    <h1 class="page-title">Lägg till en ny student</h1>
+</header>
+<section class="form-container">
+    <h4>Student information</h4>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <label asp-for="StudentModel.StudentName"></label>
+                <input asp-for="StudentModel.StudentName" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.EmailAdress"></label>
+                <input asp-for="StudentModel.EmailAdress" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.PhoneNumber"></label>
+                <input asp-for="StudentModel.PhoneNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.Adress"></label>
+                <input asp-for="StudentModel.Adress" />
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>
