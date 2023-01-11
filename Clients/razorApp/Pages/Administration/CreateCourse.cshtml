@@ -31,13 +31,14 @@
                 <input asp-for="CourseModel!.CategoryName" />
             </div> *@
              <div>
-                <select asp-for="CourseModel!.CategoryId" id="categorySelect">
+                @*<select asp-for="CourseModel!.CategoryId" id="categorySelect">
                     <option value="" selected disabled hidden>Välj kategori</option>
                     @foreach (var category in Model.CategoryModels!)
                     {
                         <option value="@category.CategoryId">@category.Category</option>
                     }
-                </select>
+                </select>*@
+                <select name="CategoryId" asp-items="Model.CategoryModels"></select>
             </div>
 
             <div class="form-control">
@@ -53,7 +54,7 @@
                 <input asp-for="CourseModel!.TeacherId" />
             </div>
             <div class="buttons">
-                <button type="submit" class="btn">Spara</button>
+                <button type="submit" asp-page-handler="Async" asp-route-categoryId="" class="btn">Spara</button>
             </div>
         </form>
     </section>
