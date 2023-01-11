@@ -7,26 +7,33 @@
 <h1>@ViewData["Title"]</h1>
 
 <br>
- <a class="go-back" asp-page="/Index"><i class="fa-solid fa-left-long"></i>Startsidan</a>
- <a class="go-back" asp-page="/CourseGallery"><i class="fa-solid fa-left-long"></i>Kurser</a>
+<a class="go-back" asp-page="/Index"><i class="fa-solid fa-left-long"></i>Startsidan</a>
+<a class="go-back" asp-page="/CourseGallery"><i class="fa-solid fa-left-long"></i>Kurser</a>
 <br>
-@* <div>
-        <article>
-            <section class="gallery-wrapper">
-                <p>@Model.StudentCourseModel.StudentId</p>
-                <p>@Model.StudentCourseModel.StudentName</p>
-                <p>@Model.StudentCourseModel.Courses</p>
-                
-            </section>
-        </article>
-    
-  
-</div> *@
 
-@* @foreach (var student in Model.StudentCourseModel)
-                {
-                    <div>
-                        <p>@student.CourseNumber</p>
-                         <p>@student.Title</p>
-                    </div>
-                } *@
+<div>
+    <article>
+        <section class="gallery-wrapper">
+            <p>@Model.StudentCourseModel.StudentId</p>
+            <p>@Model.StudentCourseModel.StudentName</p>
+        </section>
+    </article>
+</div>
+
+<div>
+    <p><span>@Model.StudentCourseModel.StudentName</span>s kurser:</p>
+
+    <ul>
+    @foreach (var student in Model.StudentCourseModel.Courses)
+    {
+            <li>
+                <div>
+                    <p>Kursnummer</p>
+                    <p>@student.CourseNumber</p>
+                    <p>Kurs namn</p>
+                    <p>@student.Title</p>
+                </div>
+            </li>        
+    }
+    </ul>
+</div>

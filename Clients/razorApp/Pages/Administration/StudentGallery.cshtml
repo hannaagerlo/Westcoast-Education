@@ -23,14 +23,11 @@
             @foreach (var student in Model.Students)
             {
                 <div class="gallery-card">
-                    <h4>@student.Name</h4>
-                    <a asp-page="/Details" asp-route-id="@student.StudentId">
-                        @* <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200"> *@
-                    </a>
+                    <h4>@student.Name</h4>                   
                     <p>@student.Name</p>
                     <p>@student.Email</p>
                     <a asp-page="/Administration/UpdateStudent" asp-route-id="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Ändra</a>
-                    <a asp-page="/Administration/StudentDetails" asp-route-id="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Detaljer</a>
+                    <a asp-page="/Administration/StudentDetails" asp-route-studentId="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Detaljer</a>
                     <a asp-page="/Administration/DeleteStudent" asp-route-id="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Ta bort</a>
 
                 </div>
