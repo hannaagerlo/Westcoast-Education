@@ -1,21 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses-Api", "Courses-API\Courses-Api.csproj", "{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Courses-Api", "Courses-API\Courses-Api.csproj", "{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{3ED88D5E-B0AD-4DC4-9672-696FAFE842B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInterface", "Clients\CustomerInterface\CustomerInterface.csproj", "{010FDF30-F865-4D53-B06E-1B551A86723A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInterface", "Clients\CustomerInterface\CustomerInterface.csproj", "{010FDF30-F865-4D53-B06E-1B551A86723A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "razorApp", "Clients\razorApp\razorApp.csproj", "{774332FE-73D2-4EF9-A253-0C2A7E0A79B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{14CB02B0-D63D-4DA5-964C-6F094C0FFA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,8 +25,19 @@ Global
 		{010FDF30-F865-4D53-B06E-1B551A86723A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{010FDF30-F865-4D53-B06E-1B551A86723A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{010FDF30-F865-4D53-B06E-1B551A86723A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774332FE-73D2-4EF9-A253-0C2A7E0A79B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774332FE-73D2-4EF9-A253-0C2A7E0A79B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774332FE-73D2-4EF9-A253-0C2A7E0A79B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774332FE-73D2-4EF9-A253-0C2A7E0A79B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{010FDF30-F865-4D53-B06E-1B551A86723A} = {3ED88D5E-B0AD-4DC4-9672-696FAFE842B8}
+		{774332FE-73D2-4EF9-A253-0C2A7E0A79B0} = {3ED88D5E-B0AD-4DC4-9672-696FAFE842B8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {253B0B9E-C109-47A3-8116-A4F677C6A844}
 	EndGlobalSection
 EndGlobal
