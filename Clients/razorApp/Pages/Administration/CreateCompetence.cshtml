@@ -1,0 +1,25 @@
+@page
+@model razorApp.Pages.Administration.CreateCompetence
+@{
+    ViewData["Title"] = "CreateCompetence";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<header>
+    <h1 class="page-title">Lägg till kompetens</h1>
+</header>
+<section class="form-container">
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <label asp-for="CompetenceModel!.Name"></label>
+                <input asp-for="CompetenceModel!.Name" />
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>

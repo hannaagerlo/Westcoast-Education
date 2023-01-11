@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\razorApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\razorApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\Images\\.Net.jpg",
+      "PackagePath": "staticwebassets\\Images\\.Net.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\Images\\ItProject.webp",
+      "PackagePath": "staticwebassets\\Images\\ItProject.webp"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\Images\\UiDesign.jpg",
+      "PackagePath": "staticwebassets\\Images\\UiDesign.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\Images\\Uxdesign.jpg",
+      "PackagePath": "staticwebassets\\Images\\Uxdesign.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\Images\\apputvecklare.webp",
+      "PackagePath": "staticwebassets\\Images\\apputvecklare.webp"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\css\\gallery-page.css",
+      "PackagePath": "staticwebassets\\css\\gallery-page.css"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.razorApp.props",
+      "PackagePath": "build\\razorApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.razorApp.props",
+      "PackagePath": "buildMultiTargeting\\razorApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.razorApp.props",
+      "PackagePath": "buildTransitive\\razorApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.razorApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

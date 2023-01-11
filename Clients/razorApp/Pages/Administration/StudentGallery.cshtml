@@ -6,6 +6,41 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<h1 class="page-title">Våra studenter</h1>
 <div>
-    
+<br>
+ <a class="go-back" asp-page="/Administration/Index"><i class="fa-solid fa-left-long"></i>Startsidan</a>
+<br>
+<a asp-page="/Administration/CreateStudent" class="links add-link">Lägg till student</a>
 </div>
+
+<br>
+
+@if(Model.Students!.Any())
+{
+    <article>
+        <section class="gallery-wrapper">
+            @foreach (var student in Model.Students)
+            {
+                <div class="gallery-card">
+                    <h4>@student.Name</h4>
+                    <a asp-page="/Details" asp-route-id="@student.StudentId">
+                        @* <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200"> *@
+                    </a>
+                    <p>@student.Name</p>
+                    <p>@student.Email</p>
+                    <a asp-page="/Administration/UpdateStudent" asp-route-id="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Ändra</a>
+                    <a asp-page="/Administration/StudentDetails" asp-route-id="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Detaljer</a>
+                    <a asp-page="/Administration/DeleteStudent" asp-route-id="@student.StudentId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Ta bort</a>
+
+                </div>
+            }
+        </section>
+    </article>
+}
+else
+{
+    <div class="box-item">Inga studenter finns i systemet</div>
+}
+
+

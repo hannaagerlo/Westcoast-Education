@@ -6,6 +6,51 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div>
-    
-</div>
+<header>
+    <h1 class="page-title">Uppatera lärare</h1>
+</header>
+<section class="form-container">
+    <h4>lärarens information</h4>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <input type="hidden" asp-for="TeacherModel.TeacherId">
+
+              <div class="form-control">
+                <label asp-for="TeacherModel.Firstname"></label>
+                <input asp-for="TeacherModel.Firstname" />
+            </div>
+            </div>
+                <label asp-for="TeacherModel.Lastname"></label>
+                <input asp-for="TeacherModel.Lastname" />
+            </div>
+            <div class="form-control">
+                <label asp-for="TeacherModel.Email"></label>
+                <input asp-for="TeacherModel.Email" />
+            </div>
+            <div class="form-control">
+                <label asp-for="TeacherModel.PhoneNumber"></label>
+                <input asp-for="TeacherModel.PhoneNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="TeacherModel.Street"></label>
+                <input asp-for="TeacherModel.Street" />
+            </div>
+             <div class="form-control">
+                <label asp-for="TeacherModel.StreetNumber"></label>
+                <input asp-for="TeacherModel.StreetNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="TeacherModel.PostalCode"></label>
+                <input asp-for="TeacherModel.PostalCode" />
+            </div>
+             <div class="form-control">
+                <label asp-for="TeacherModel.City"></label>
+                <input asp-for="TeacherModel.City" />
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>

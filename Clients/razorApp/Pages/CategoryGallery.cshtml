@@ -1,0 +1,31 @@
+@page
+@model razorApp.Pages.CategoryGallery
+@{
+    ViewData["Title"] = "CategoryGallery";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h1 class="page-title">Våra kategorier</h1>
+<br>
+ <a class="go-back" asp-page="/Index"><i class="fa-solid fa-left-long"></i>Startsidan</a>
+<br>
+
+<article>
+    <section class="gallery-wrapper">
+        @foreach (var category in Model.Categories)
+        {
+            <div class="gallery-card">
+                <a asp-page="/Details" asp-route-id="@category.CategoryId">
+                    @* <img src="" alt="course.Title" courseId="@course.CourseId" width="200"> *@
+                    <h4>@category.Category</h4>
+                </a>
+                <h4>@category.Category</h4>
+                @* <Button class="button">Registrera dig på kursen</Button> *@
+                @* <form method="post"><Button type ="submit" class="button">Registrera dig på kursen</Button></form> *@
+                
+            </div>
+        }
+    </section>
+</article>
+<br>

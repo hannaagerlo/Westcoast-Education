@@ -1,0 +1,57 @@
+@page 
+@model razorApp.Pages.Administration.CreateAdmin
+@{
+    ViewData["Title"] = "CreateAdmin";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<header>
+    <h1 class="page-title">Registrera en ny admin</h1>
+</header>
+<section class="form-container">
+    <h4>Admin information</h4>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <label asp-for="AdminModel.Firstname"></label>
+                <input asp-for="AdminModel.Firstname" />
+            </div>
+             <div class="form-control">
+                <label asp-for="AdminModel.Lastname"></label>
+                <input asp-for="AdminModel.Lastname" />
+            </div>
+            <div class="form-control">
+                <label asp-for="AdminModel.Email"></label>
+                <input asp-for="AdminModel.Email" />
+            </div>
+            <div class="form-control">
+                <label asp-for="AdminModel.PhoneNumber"></label>
+                <input asp-for="AdminModel.PhoneNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="AdminModel.Street"></label>
+                <input asp-for="AdminModel.Street" />
+            </div>
+             <div class="form-control">
+                <label asp-for="AdminModel.StreetNumber"></label>
+                <input asp-for="AdminModel.StreetNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="AdminModel.PostalCode"></label>
+                <input asp-for="AdminModel.PostalCode" />
+            </div>
+             <div class="form-control">
+                <label asp-for="AdminModel.City"></label>
+                <input asp-for="AdminModel.City" />
+            </div>
+            @* <div class="form-control">
+                <label asp-for="AdminModel.Password"></label>
+                <input asp-for="AdminModel.Password" />
+            </div> *@
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>

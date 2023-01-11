@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj": {}
+    "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj": {}
   },
   "projects": {
-    "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj": {
+    "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
+        "projectUniqueName": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
         "projectName": "razorApp",
-        "projectPath": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
-        "packagesPath": "C:\\Users\\Hanna\\.nuget\\packages\\",
-        "outputPath": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\obj\\",
+        "projectPath": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
+        "packagesPath": "C:\\Users\\HannaAgerlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hanna\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\HannaAgerlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\source\\Nugets": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,13 +40,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -55,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

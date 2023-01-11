@@ -1,0 +1,74 @@
+@page
+@model razorApp.Pages.Register
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+<h1 class="page-title">Registrera dig som student</h1>
+
+<section class="form-container">
+    <h4>Student information</h4>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <label asp-for="StudentModel.Firstname"></label>
+                <input asp-for="StudentModel.Firstname" />
+            </div>
+             <div class="form-control">
+                <label asp-for="StudentModel.Lastname"></label>
+                <input asp-for="StudentModel.Lastname" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.Email"></label>
+                <input asp-for="StudentModel.Email" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.PhoneNumber"></label>
+                <input asp-for="StudentModel.PhoneNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.Street"></label>
+                <input asp-for="StudentModel.Street" />
+            </div>
+             <div class="form-control">
+                <label asp-for="StudentModel.StreetNumber"></label>
+                <input asp-for="StudentModel.StreetNumber" />
+            </div>
+            <div class="form-control">
+                <label asp-for="StudentModel.PostalCode"></label>
+                <input asp-for="StudentModel.PostalCode" />
+            </div>
+             <div class="form-control">
+                <label asp-for="StudentModel.City"></label>
+                <input asp-for="StudentModel.City" />
+            </div>
+            @* <div class="form-control">
+                <label asp-for="StudentModel.Password"></label>
+                <input asp-for="StudentModel.Password" />
+            </div> *@
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+</section>
+@* <section class="form-container">
+  <h4>Information</h4>
+  <form method="post">
+        <input asp-for="UserModel.Firstname" placeholder="First name">
+        <input asp-for="UserModel.Lastname" placeholder="Last name">
+        <input asp-for="UserModel.Email" placeholder="Email">
+        <input asp-for="UserModel.PhoneNumber" placeholder="Phone number">
+        <input asp-for="UserModel.Street" placeholder="Street">
+        <input asp-for="UserModel.StreetNumber" placeholder="Street number">
+         <input asp-for="UserModel.PostalCode" placeholder="PostalCode">
+         <input asp-for="UserModel.City" placeholder="City">
+         <input asp-for="UserModel.Password" placeholder="Password">
+        <br>
+    <button type="submit" class="btn">Spara</button>
+  </form>
+</section> *@
+</div>

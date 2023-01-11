@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "gJZBl8t5lQ5r2LdmGDfzSdOcsxPIvXOu3TQS6NI/0t1RHoJTPze3FFSIsPylXPzLyMafQoaxv9AYnqED8q+DcA==",
+  "dgSpecHash": "sMiAD45AN1w8YazuicGuHQz/syWMfy8LYI97LjYQXURxWdEkGJvPS0lkWSKtNFIBJBBOqy5r+frIo4C4d3p8TA==",
   "success": true,
-  "projectFilePath": "C:\\Webbutveckling\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\HannaAgerlo\\source\\repos\\Westcoast-Education\\Clients\\razorApp\\razorApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\HannaAgerlo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

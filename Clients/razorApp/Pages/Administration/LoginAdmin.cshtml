@@ -1,0 +1,31 @@
+@page
+@model razorApp.Pages.Administration.LoginAdmin
+@{
+    ViewData["Title"] = "LoginAdmin";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<header>
+    <h1 class="page-title">Admin portal</h1>
+</header>
+<section class="form-container">
+    <h2>Logga in</h2>
+    <section class="form-wrapper">
+        <form class="form" method="post">
+            <div class="form-control">
+                <label asp-for="LoginModel.Email"></label>
+                <input asp-for="LoginModel.Email" />
+            </div>
+             <div class="form-control">
+                <label asp-for="LoginModel.Password"></label>
+                <input asp-for="LoginModel.Password" />
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Spara</button>
+            </div>
+        </form>
+    </section>
+    <br>
+    <div><a asp-page="/Administration/CreateAdmin" class="links add-link">Inget konto? Registera dig här!</a></div>
+</section>

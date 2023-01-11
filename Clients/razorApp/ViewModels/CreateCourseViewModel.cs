@@ -10,9 +10,11 @@ namespace razorApp.ViewModels
         public int CourseNumber { get; set; }   
         public string? Title { get; set; }  
         public string? Lenght { get; set; }
-        public string? Category { get; set; }
+        //public string? CategoryName { get; set; }
+        public int CategoryId { get; set; }
         public string? Description { get; set; }
         public string? Details { get; set; }
-        public string? ImageUrl { get; set; }
+         public int TeacherId { get; set; }
+       
     }
 }

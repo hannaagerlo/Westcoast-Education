@@ -6,6 +6,43 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<h1 class="page-title">Våra lärare</h1>
+<br>
+ <a class="go-back" asp-page="/Administration/Index"><i class="fa-solid fa-left-long"></i>Startsidan</a>
+<br>
 <div>
-    
+<a asp-page="/Administration/CreateTeacher" class="links add-link">Lägg till lärare</a>
 </div>
+
+<br>
+<div>
+<a asp-page="/Administration/CreateCompetence" class="links add-link">Lägg till kompetens</a>
+</div>
+<br>
+
+@if(Model.Teachers!.Any())
+{
+    <article>
+        <section class="gallery-wrapper">
+            @foreach (var teacher in Model.Teachers)
+            {
+                <div class="gallery-card">
+                    <h4>@teacher.Name</h4>
+                    <a asp-page="/Details" asp-route-id="@teacher.TeacherId">
+                        @* <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200"> *@
+                    </a>
+                    <p>@teacher.Competence</p>
+                    <p>@teacher.Email</p>
+                    <a asp-page="/Administration/UpdateTeacher" asp-route-id="@teacher.TeacherId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Ändra</a>
+                    <a asp-page="/Administration/DeleteTeacher" asp-route-id="@teacher.TeacherId" class="btn btn-primary" class="links"><i class="fa-solid fa-pen-to-square"></i>Ta bort</a>
+
+                </div>
+            }
+        </section>
+    </article>
+}
+else
+{
+    <div class="box-item">Inga lärare finns i systemet</div>
+}
+

@@ -26,9 +26,38 @@ namespace razorApp.Pages
             using var http = new HttpClient();
             Courses = await http.GetFromJsonAsync<List<CourseViewModel>>(url);
         }
-        public async Task SignUpForCourse()
-        {
-            
-        }
+        // public async Task OnPostAsync(int courseId)
+        // {
+        //      using var http = new HttpClient();
+        //     var baseUrl = _config.GetValue<string>("baseUrl");
+        //     string url = $"{baseUrl}/signup/{courseId}";
+        //     // string studentUrl = $"{baseUrl}/Students/getUser";
+
+        //     var model = new StudentWithCourseViewModel()
+        //     {
+        //         CourseId = courseId
+        //     };
+        
+        //     var response = await http.PostAsJsonAsync(url, model);
+        //     // if (response.IsSuccessStatusCode)
+        //     // {
+        //     //     ViewData["Message"] = $"Studenten har registrerat sig på den här kursen";
+                
+        //     // }
+        //     // else
+        //     // {
+        //     //     ViewData["Message"] = $"Fel inträffade vid registrering";
+        //     // }
+
+        //      if(!response.IsSuccessStatusCode)
+        //     {
+        //         string reason = await response.Content.ReadAsStringAsync();
+        //         Console.WriteLine(reason);
+        //     }
+        //     Response.Redirect("/RegistraionConfirmation");
+        //     return;
+        // }
+        
+        
     }
 }

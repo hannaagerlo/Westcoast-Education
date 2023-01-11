@@ -37,10 +37,10 @@ namespace razorApp.Pages.Administration
                 CourseNumber = course.CourseNumber,
                 Title = course.Title,
                 Lenght = course.Lenght,
-                Category = course.Category,
+                //CategoryName = course.CategoryName,
                 Description = course.Description,
                 Details = course.Details,
-                ImageUrl = course.ImageUrl
+
 
             };
 
@@ -61,6 +61,8 @@ namespace razorApp.Pages.Administration
                 string reason = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(reason);
             }
+            Response.Redirect("/Administration/CourseGallery");
+            return;
         }
     }
 }

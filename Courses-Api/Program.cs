@@ -18,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<EducationContext>(options => 
 options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+builder.Services.AddIdentity<User, IdentityRole>(
     options =>
     {
         options.Password.RequireLowercase = true;
@@ -27,6 +27,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(
         options.Password.RequireNonAlphanumeric = false;
 
         options.User.RequireUniqueEmail = true;
+        options.SignIn.RequireConfirmedEmail = false;
 
         options.Lockout.MaxFailedAccessAttempts = 5;
         options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
@@ -55,9 +56,12 @@ builder.Services.AddAuthentication(options =>
 
 // Dependacy injection för interface och klasser 
 builder.Services.AddScoped<ICoursesRepository, CourseRepository>(); 
-builder.Services.AddScoped<IStudentRepository, StudentRepository>(); 
 builder.Services.AddScoped<ITeacherRepository, TeacherRepository>(); 
 builder.Services.AddScoped<IUserHelper, UserHelper>(); 
+builder.Services.AddScoped<IStudentRepository, StudentRepository>(); 
+builder.Services.AddScoped<ICompetenceRepository, CompetenceRepository>(); 
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>(); 
+builder.Services.AddScoped<IUserRepository, UserRepository>(); 
 
 
 // Add Automapper
@@ -67,6 +71,19 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("WestcoastCors",
+    policy =>
+    {
+      policy.AllowAnyHeader();
+      policy.AllowAnyMethod();
+      policy.WithOrigins(
+        "http://localhost:7164");
+    }
+  );
+});
 
 var app = builder.Build();
 
@@ -78,6 +95,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("WestcoastCors");
 
 app.UseAuthorization();
 app.UseAuthentication();

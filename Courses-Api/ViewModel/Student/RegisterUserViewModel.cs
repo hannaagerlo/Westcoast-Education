@@ -14,16 +14,19 @@ namespace Courses_Api.ViewModel.Student
         public string? Lastname { get; set; }
         [Required]
         [EmailAddress(ErrorMessage ="Felagtig e-post adress")]
-        public string? EmailAdress { get; set; }
+        public string? Email { get; set; }
         [Required]
 
         public string? PhoneNumber { get; set; }
         [Required]
-        public string? StreetAddress { get; set; }
+        public string? Street { get; set; }
+         [Required]
+        public string? StreetNumber { get; set; }
         [Required]
         public string? PostalCode { get; set; }
+        
         [Required]
-        public string? Municipality { get; set; }
+        public string? City { get; set; }
         [Required]
         public string? Password { get; set; }
 

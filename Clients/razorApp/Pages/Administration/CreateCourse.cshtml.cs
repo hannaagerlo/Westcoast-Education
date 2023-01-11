@@ -10,6 +10,7 @@ namespace razorApp.Pages.Administration
 
         [BindProperty]
         public CreateCourseViewModel CourseModel { get; set; }
+        public List<CategoryViewModel>? CategoryModels { get; set; }
         private readonly IConfiguration _config;
 
         public CreateCourse(ILogger<CreateCourse> logger, IConfiguration config)
@@ -18,8 +19,13 @@ namespace razorApp.Pages.Administration
             _config = config;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
+             using var http = new HttpClient();
+             var baseUrl = _config.GetValue<string>("baseUrl");
+            string url = $"{baseUrl}/Category/list";
+            CategoryModels = await http.GetFromJsonAsync<List<CategoryViewModel>>(url) 
+                ?? new List<CategoryViewModel>();
         }
 
         public async Task OnPostAsync()
@@ -35,6 +41,8 @@ namespace razorApp.Pages.Administration
                 string reason = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(reason);
             }
+            Response.Redirect("/Administration/CourseGallery");
+            return;
         
         }
     }

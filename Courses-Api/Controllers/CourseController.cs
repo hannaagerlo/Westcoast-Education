@@ -4,6 +4,7 @@ using Courses_Api.Helpers.UserHelper;
 using Courses_Api.Interface;
 using Courses_Api.Models;
 using Courses_Api.ViewModel;
+using Courses_Api.ViewModel.Courses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -49,6 +50,32 @@ namespace Courses_Api.Controllers
 
         
         }
+          [HttpGet("listWithTeachers")]
+        public async Task<ActionResult<List<CourseViewModel>>> ListCoursesWithTeacher()
+        {
+             return Ok(await _courseRepo.ListAllCoursesWithTeacherAsync());
+
+            // var response = await _courseRepo.ListAllCoursesAsync();
+            // var courseList = new List<CourseViewModel>();
+
+            // foreach(var course in response)
+            // {
+            //     courseList.Add(
+            //         new CourseViewModel{
+            //             CourseId = course.Id,
+            //             CourseNumber = course.CourseNumber,
+            //             Title = course.Title,
+            //             Lenght = course.Lenght,
+            //             Category = course.Category,
+            //             Description = course.Description,
+            //             Details = course.Details
+            //         }
+            //     );
+            // }
+            // return Ok(courseList);
+
+        
+        }
         [HttpGet("{id}")]    
         public async Task<ActionResult<CourseViewModel>> GetCourseById(int id)
         {
@@ -65,19 +92,19 @@ namespace Courses_Api.Controllers
         }
 
         // GET Category
-        [HttpGet("bycategory/{category}")]
-        public async Task<ActionResult<List<CourseViewModel>>> GetCourseByCategory(string category)
-        {
-            var response = await _courseRepo.GetCourseAsync(category);
+        // [HttpGet("bycategory/{category}")]
+        // public async Task<ActionResult<List<CourseViewModel>>> GetCourseByCategory(string category)
+        // {
+        //     var response = await _courseRepo.GetCourseAsync(category);
             
-            if(response is null)
-            return NotFound($"Det gick inte att hitta några kurser med kategorin: {category}");
+        //     if(response is null)
+        //     return NotFound($"Det gick inte att hitta några kurser med kategorin: {category}");
 
-            return Ok(response);
-        }
+        //     return Ok(response);
+        // }
         //POST
         [HttpPost]
-        public async Task<ActionResult> AddCourse(PostCoursesViewModel course)
+        public async Task<ActionResult> AddCourse(PostCourseViewModel course)
         {
             // måste lägga in felhantering, ska inte gå att spara en kurs med samma kursnummer.
                 await _courseRepo.AddCourseAsync(course);
@@ -107,7 +134,7 @@ namespace Courses_Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCourseAsync(int id, PostCoursesViewModel course)
+        public async Task<ActionResult> UpdateCourseAsync(int id, PutCourseViewModel course)
         {
             await _courseRepo.UpdateCourseAsync(id, course);
             if(await _courseRepo.SaveAllAsync())
@@ -134,7 +161,7 @@ namespace Courses_Api.Controllers
        [HttpPost("signup/{courseId}")]
         public async Task<ActionResult> SignUpForCourses(int courseId)
         {
-            var loggedInStudent = _userHelper.LoggedInStudent()?.EmailAdress;
+            var loggedInStudent = _userHelper.LoggedInStudent()?.Email;
 
             if (loggedInStudent is null)
                 throw new Exception("Ingen användare är inloggad");

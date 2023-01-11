@@ -5,24 +5,41 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
-@* <div>
+<br>
+ <a class="go-back" asp-page="/Index"><i class="fa-solid fa-left-long"></i>Startsidan</a>
+ <a class="go-back" asp-page="/CourseGallery"><i class="fa-solid fa-left-long"></i>Kurser</a>
+<br>
+<div>
     <article class="course-detail">
-  <h1 class="page-title">@Model!.Title</h1>
-  <img src="@Model.ImageUrl" alt="@Model.Title" courseId="@Model.CourseId">
+  <h1 class="page-title">@Model.CourseModel!.Title</h1>
+  @* <img src="@Model.ImageUrl" alt="@Model.Title" courseId="@Model.CourseId"> *@
   <section class="course-description">
-    <div>Kursnummer @Model.CourseNumber</div>
-    <div>Längd @Model.Lenght</div>
-    <h2>Kategori @Model.Category</h2>
-    <h2>Detaljer @Model.Details</h2>
+    <div>Kursnummer: @Model.CourseModel.CourseNumber</div>
+    <div>Längd: @Model.CourseModel.Lenght</div>
+    <h2>Kategori: @Model.CourseModel.CategoryName</h2>
+    <h2>Detaljer: @Model.CourseModel.Details</h2>
     <hr>
     <h4>Beskrivning</h4>
-    <p>@Model.Description</p>
-    <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Tillbaka till kursutbudet</a>
-    <a input="submit" asp-action="SignUp" asp-route-id="@Model.CourseId"><i class="fa-solid fa-left-long"></i>Registera dig på kursen</a>
-    <a asp-action="Edit"><i class="fa-solid fa-left-long"></i>Ändra</a>
-    <a asp-action="GetDelete" asp-route-id="@Model.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Ta bort</a>
+    <p>@Model.CourseModel.Description</p>
+    @* <a class="go-back" asp-action="Index"><i class="fa-solid fa-left-long"></i>Tillbaka till kursutbudet</a> *@
+    <a class="go-back" asp-page="/CourseGallery"><i class="fa-solid fa-left-long"></i>Tillbaka till kursutbudet</a>
+    @* <a input="submit" asp-action="SignUp" asp-route-id="@Model.CourseId"><i class="fa-solid fa-left-long"></i>Registera dig på kursen</a> *@
+    @* <a asp-action="Edit"><i class="fa-solid fa-left-long"></i>Ändra</a>
+    <a asp-action="GetDelete" asp-route-id="@Model.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Ta bort</a> *@
 
   </section>
 </article>
-</div> *@
+</div>
+
+    <form method="post">
+        <input type="hidden" asp-for="CourseModel!.CourseId">
+        <input type="hidden" asp-for="CourseModel!.CourseNumber">
+        <input type="hidden" asp-for="CourseModel!.Title">
+        <input type="hidden" asp-for="CourseModel!.Lenght">
+        <input type="hidden" asp-for="CourseModel!.Description">
+        <input type="hidden" asp-for="CourseModel!.Details">
+        <input type="hidden" asp-for="CourseModel!.CategoryName">
+        <button type="submit">Register dig på kursen</button>
+    </form>
+</div>
+

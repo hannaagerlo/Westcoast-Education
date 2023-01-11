@@ -50,3 +50,34 @@ C:\Users\Hanna\source\repos\Programmering 1 - Basic\Westcoast-Education\Clients\
 C:\Users\Hanna\source\repos\Programmering 1 - Basic\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.pdb
 C:\Users\Hanna\source\repos\Programmering 1 - Basic\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.genruntimeconfig.cache
 C:\Users\Hanna\source\repos\Programmering 1 - Basic\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\ref\CustomerInterface.dll
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\appsettings.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\CustomerInterface.staticwebassets.runtime.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\CustomerInterface.exe
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\CustomerInterface.deps.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\CustomerInterface.runtimeconfig.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\CustomerInterface.dll
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\bin\Debug\net6.0\CustomerInterface.pdb
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.csproj.AssemblyReference.cache
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.AssemblyInfoInputs.cache
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.AssemblyInfo.cs
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.csproj.CoreCompileInputs.cache
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.RazorAssemblyInfo.cache
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.RazorAssemblyInfo.cs
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\scopedcss\bundle\CustomerInterface.styles.css
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\scopedcss\projectbundle\CustomerInterface.bundle.scp.css
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.dll
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\refint\CustomerInterface.dll
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.pdb
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\CustomerInterface.genruntimeconfig.cache
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\ref\CustomerInterface.dll
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets\msbuild.CustomerInterface.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets\msbuild.build.CustomerInterface.props
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CustomerInterface.props
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CustomerInterface.props
+C:\Users\HannaAgerlo\source\repos\Westcoast-Education\Clients\CustomerInterface\obj\Debug\net6.0\staticwebassets.pack.json

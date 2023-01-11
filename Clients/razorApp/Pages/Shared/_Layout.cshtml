@@ -15,10 +15,20 @@
     <nav id="navbar">
         <h1 class="logo"><span class="text-primary"><i class="fa-solid fa-car"></i>Westcoast </span>Education</h1>
         <ul>
-            <li><a asp-page="/Index">Start</a></li>
-            <li><a asp-page="/CourseGallery">Våra kurser</a></li>
-            <li><a asp-page="/Register">Registera dig</a></li>
-            <li><a asp-page="/Administration/Index"><i class="fa-solid fa-gear"></i>Admin</a></li>
+            <li><a asp-page="/Register">StudentApp</a></li>
+            @* <li><a asp-page="/CourseGallery">Våra kurser</a></li> *@
+                @* @if (HttpContext.Session.GetString("UserId") != null)
+                {
+                    <li><a asp-page="/Logout">Logga ut</a></li>
+                }
+                else
+                {
+                    <li><a asp-page="/Register">Registera dig</a></li>
+                    <li><a asp-page="/Login">Logga in</a></li>
+                } *@
+                @* <li><a asp-page="/Register">Registera dig</a></li> *@
+            <li><a asp-page="/Administration/CreateAdmin"><i class="fa-solid fa-gear"></i>AdminApp</a></li>
+             @* <li><a asp-page="/Administration/Index"><i class="fa-solid fa-gear"></i>Admin</a></li> *@
         </ul>
     </nav>
     <main>

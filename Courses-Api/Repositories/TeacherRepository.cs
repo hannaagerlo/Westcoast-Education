@@ -8,6 +8,8 @@ using Courses_Api.Data;
 using Courses_Api.Interface;
 using Courses_Api.Models;
 using Courses_Api.ViewModel.Teacher;
+using Courses_Api.ViewModel.Users;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Repositories
@@ -16,15 +18,30 @@ namespace Courses_Api.Repositories
     {
         private readonly EducationContext _context;
         private readonly IMapper _mapper;
-        public TeacherRepository(EducationContext context, IMapper mapper)
+        
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public TeacherRepository(EducationContext context, IMapper mapper, UserManager<User> userManager, 
+        RoleManager<IdentityRole> roleManager)
         {
             _mapper = mapper;
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public async Task AddTeacherAsync(PostTeacherViewModel teacher)
         {
+            var competence = _context.Competences.Include(c => c.Teachers).Where(
+               c => c.Name!.ToLower() == teacher.Competence!.ToLower()).SingleOrDefault();
+
+                if(competence is null)
+            {
+                 throw new Exception($"Kompetensen {teacher.Competence} finns inte i systemet.");
+            }
+
             var teacherToAdd = _mapper.Map<Teacher>(teacher);
+           teacherToAdd.CompetenceName = competence;
            await _context.Teachers.AddAsync(teacherToAdd); 
         }
 
@@ -41,7 +58,7 @@ namespace Courses_Api.Repositories
             }
         }
 
-        public async Task<TeacherViewModel?> GetTeacherAsync(int id)
+        public async Task<TeacherViewModel?> GetTeacherByIdAsync(int id)
         {
             return await _context.Teachers.Where(s => s.Id == id)
             .ProjectTo<TeacherViewModel>(_mapper.ConfigurationProvider)
@@ -53,12 +70,13 @@ namespace Courses_Api.Repositories
             return await _context.Teachers.ProjectTo<TeacherViewModel>(_mapper.ConfigurationProvider).ToListAsync();
         }
 
+
         public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task UpdateTeacherAsync(int id, PostTeacherViewModel teacher)
+        public async Task UpdateTeacherAsync(int id, PutTeacherViewModel teacher)
         {
             var teacherToUpdate = await _context.Teachers.FindAsync(id);
 
@@ -68,12 +86,12 @@ namespace Courses_Api.Repositories
             }
             teacherToUpdate.Firstname = teacher.Firstname;
             teacherToUpdate.Lastname = teacher.Lastname;
-            teacherToUpdate.EmailAdress = teacher.EmailAdress;
+            teacherToUpdate.Email = teacher.Email;
             teacherToUpdate.PhoneNumber = teacher.PhoneNumber;
-            teacherToUpdate.StreetAddress = teacher.StreetAddress;
+            teacherToUpdate.Street = teacher.Street;
+            teacherToUpdate.StreetNumber = teacher.StreetNumber;
             teacherToUpdate.PostalCode = teacher.PostalCode;
-            teacherToUpdate.Municipality = teacher.Municipality;
-
+            teacherToUpdate.City = teacher.City;
 
             _context.Teachers.Update(teacherToUpdate);
         }

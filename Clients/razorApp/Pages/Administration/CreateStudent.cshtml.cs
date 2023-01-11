@@ -35,6 +35,9 @@ namespace razorApp.Pages.Administration
                 string reason = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(reason);
             }
+            
+            Response.Redirect("/Administration/StudentGallery");
+            return;
         
         }
     }

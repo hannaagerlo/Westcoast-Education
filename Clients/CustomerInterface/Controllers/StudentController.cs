@@ -31,7 +31,8 @@ namespace CustomerInterface.Controllers
 
             if(await _studentService.CreateStudent(student))
             {
-                return View("Confirmation");
+                // return View("Confirmation");
+                return RedirectToAction("Index", "Course");
             }
             return View("Register", student);
         }

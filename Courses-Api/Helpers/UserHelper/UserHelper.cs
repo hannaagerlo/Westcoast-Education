@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Courses_Api.Data;
 using Courses_Api.ViewModel.Student;
+using Courses_Api.ViewModel.Users;
 
 namespace Courses_Api.Helpers.UserHelper
 {
@@ -14,12 +15,12 @@ namespace Courses_Api.Helpers.UserHelper
         {
             _context = context;
         }
-        public int GetUserId()
+        public string GetUserEmail()
         {
-            return _context.Students.FirstOrDefault(x => x.IsLoggedIn).Id;
+            return _context.Users.FirstOrDefault(x => x.IsLoggedIn).Email;
         }
- 
-        public StudentViewModel? LoggedInStudent()
+
+          public StudentViewModel? LoggedInStudent()
         {
             var student = _context.Students.FirstOrDefault(x => x.IsLoggedIn);
 
@@ -28,8 +29,24 @@ namespace Courses_Api.Helpers.UserHelper
 
             var viewModel = new StudentViewModel
             {
-                EmailAdress = student.EmailAdress,
-                StudentName = student.Firstname
+                StudentId = student.Id,
+                Email = student.Email
+            };
+
+            return viewModel;
+        }
+ 
+        public UserViewModel? LoggedInUser()
+        {
+            var user = _context.Users.FirstOrDefault(x => x.IsLoggedIn);
+
+            if (user is null)
+                return null;
+
+            var viewModel = new UserViewModel
+            {
+                UserId = user.Id,
+                Email = user.Email
             };
 
             return viewModel;

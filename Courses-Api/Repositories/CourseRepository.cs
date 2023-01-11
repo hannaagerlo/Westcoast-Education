@@ -3,7 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Courses_Api.Data;
 using Courses_Api.Interface;
 using Courses_Api.Models;
-using Courses_Api.ViewModel;
+using Courses_Api.ViewModel.Courses;
 using Microsoft.EntityFrameworkCore;
 
 namespace Courses_Api.Repositories
@@ -18,9 +18,29 @@ namespace Courses_Api.Repositories
             _context = context;
         }
 
-        public async Task AddCourseAsync(PostCoursesViewModel course)
+        public async Task AddCourseAsync(PostCourseViewModel model)
         {
-           var courseToAdd = _mapper.Map<Course>(course);
+            // var category = _context.Categories.Include(cc => cc.Courses).Where(
+            // c => c.Name!.ToLower() == model.CategoryName!.ToLower()).SingleOrDefault();
+
+            var category = _context.Categories.Include(cc => cc.Courses).Where(
+            c => c.Id == model.CategoryId).SingleOrDefault();
+
+            var teacher = _context.Teachers.Include(cc => cc.Courses).Where(
+            c => c.Id == model.TeacherId).SingleOrDefault();
+
+            // if(category is null)
+            // {
+            //      throw new Exception($"Kategorin {model.CategoryName} finns inte i systemet.");
+            // }
+             if(category is null)
+            {
+                 throw new Exception($"Kategorin {model.CategoryId} finns inte i systemet.");
+            }
+
+           var courseToAdd = _mapper.Map<Course>(model);
+           courseToAdd.Category = category;
+           courseToAdd.Teachers = teacher;
            await _context.Courses.AddAsync(courseToAdd); 
         
         }
@@ -38,19 +58,23 @@ namespace Courses_Api.Repositories
             }
         }
 
-        public async Task<List<CourseViewModel>> GetCourseAsync(string category)
-        {
-            return await _context.Courses.Where(c => c.Category!.ToLower() == category.ToLower())
-            .ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider)
-            .ToListAsync();
+        // public async Task<List<CourseViewModel>> GetCourseAsync(string category)
+        // {
+        //     return await _context.Courses.Where(c => c.Category!.ToLower() == category.ToLower())
+        //     .ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider)
+        //     .ToListAsync();
              
-        }   
+        // }   
 
         public async Task<List<CourseViewModel>> ListAllCoursesAsync()
         {
             return await _context.Courses.ProjectTo<CourseViewModel>(_mapper.ConfigurationProvider).ToListAsync();
         }
-         public async Task UpdateCourseAsync(int id, PostCoursesViewModel course)
+        public async Task<List<CourseWithTeacherViewModel>> ListAllCoursesWithTeacherAsync()
+        {
+            return await _context.Courses.ProjectTo<CourseWithTeacherViewModel>(_mapper.ConfigurationProvider).ToListAsync();
+        }
+         public async Task UpdateCourseAsync(int id, PutCourseViewModel course)
         {
             var courseToUpdate = await _context.Courses.FindAsync(id);
 
@@ -58,13 +82,10 @@ namespace Courses_Api.Repositories
             {
                 throw new Exception("Det finns ingen kurs med id: {id}");
             }
-            courseToUpdate.CourseNumber = course.CourseNumber;
             courseToUpdate.Title = course.Title;
             courseToUpdate.Lenght = course.Lenght;
-            courseToUpdate.Category = course.Category;
             courseToUpdate.Description = course.Description;
             courseToUpdate.Details = course.Details;
-            courseToUpdate.ImageUrl = course.ImageUrl;
 
             _context.Courses.Update(courseToUpdate);
 
@@ -88,8 +109,8 @@ namespace Courses_Api.Repositories
             if (course is null)
                 throw new FileNotFoundException("Finns ingen kurs med det nummer");
 
-            var student = _context.Students.SingleOrDefault(x => x.EmailAdress == userEmail);
-
+            // var student = _context.Students.SingleOrDefault(x => x.EmailAdress == userEmail);
+            var student = _context.Students.SingleOrDefault(x => x.Email == userEmail);
             if (student is null)
                 throw new FileNotFoundException("Finns ingen student med det användarnamnet");
 

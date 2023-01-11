@@ -27,11 +27,12 @@
         {
             <div class="gallery-card">
                 <h4>@course.Title</h4>
-                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.CourseId">
+                @* <a asp-controller="Course" asp-action="Details" asp-route-id="@course.CourseId">
                     <img src="@course.ImageUrl" alt="course.Title" courseId="@course.CourseId" width="200">
-                </a>
+                </a> *@
                 <p>@course.CourseNumber @course.Lenght</p>
                 <a asp-controller="Course" asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Ändra</a>
+                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.CourseId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>Detaljer</a>
 
             </div>
         }
