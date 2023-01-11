@@ -15,7 +15,7 @@ namespace razorApp.Pages
         private readonly IConfiguration _config;
 
         [BindProperty]
-        public List<CategoryViewModel> Categories { get; set; }
+        public List<CategoryWithCoursesViewModel> Categories { get; set; }
 
         public CategoryGallery(ILogger<CategoryGallery> logger, IConfiguration config)
         {
@@ -26,10 +26,10 @@ namespace razorApp.Pages
          public async Task OnGetAsync()
         {
             var baseUrl = _config.GetValue<string>("baseUrl");
-            var url = $"{baseUrl}/category/list";
+            var url = $"{baseUrl}/category/listWithCourses";
 
             using var http = new HttpClient();
-            Categories = await http.GetFromJsonAsync<List<CategoryViewModel>>(url);
+            Categories = await http.GetFromJsonAsync<List<CategoryWithCoursesViewModel>>(url);
         }
     }
 }

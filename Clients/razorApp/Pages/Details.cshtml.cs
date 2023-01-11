@@ -29,6 +29,16 @@ namespace razorApp.Pages
             var url = $"{baseUrl}/courses/{id}";
             CourseModel = await http.GetFromJsonAsync<CourseViewModel>(url) ?? new CourseViewModel();
         }
+
+        public async Task OnPostRegisterToCourse(int id)
+        {
+            using var httpClient = new HttpClient();
+
+            var baseUrl = _config.GetValue<string>("baseUrl");
+            await httpClient.PostAsJsonAsync<int>($"{baseUrl}/courses/signup/{id}", id);
+
+            await OnGet(id);
+        }
         // public async Task OnPostAsync(int courseId)
         // {
         //     using var http = new HttpClient();

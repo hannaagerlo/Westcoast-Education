@@ -16,14 +16,17 @@
         @foreach (var category in Model.Categories)
         {
             <div class="gallery-card">
-                <a asp-page="/Details" asp-route-id="@category.CategoryId">
-                    @* <img src="" alt="course.Title" courseId="@course.CourseId" width="200"> *@
-                    <h4>@category.Category</h4>
-                </a>
-                <h4>@category.Category</h4>
-                @* <Button class="button">Registrera dig på kursen</Button> *@
-                @* <form method="post"><Button type ="submit" class="button">Registrera dig på kursen</Button></form> *@
                 
+                <h4>@category.Category</h4>
+                @foreach (var course in category.Courses)
+                {
+                    
+                    <a asp-page="/Details"asp-route-id="@course.CourseId">
+                        <p>@course.Title</p>
+                    </a>
+                }
+                @* <Button class="button">Registrera dig på kursen</Button> *@
+                @* <form method="post"><Button type ="submit" class="button">Registrera dig på kursen</Button></form> *@                
             </div>
         }
     </section>
